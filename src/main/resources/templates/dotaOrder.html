@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dota Course</title>
+    <link rel="stylesheet" th:href="@{/css/orderform.css}">
+</head>
+<body>
+<h1>Dota 2 course</h1>
+<form th:method="POST" th:action="@{/ordercourse/success}" th:object="${order}">
+    <input type="text" th:field="*{name}" id="name" placeholder="Name"> <br>
+
+    <input type="text" th:field="*{surname}" id="surname" placeholder="Surname"> <br>
+
+    <input type="text" th:field="*{email}" id="email" placeholder="Email"> <br>
+
+    <input type="text" th:field="*{phone}" id="phone" placeholder="Phone number"> <br>
+
+    <input type="text" th:field="*{experience}" id="experience" placeholder="Current MMR"> <br>
+
+    <select th:field="*{preferredRole}" id="preferredRole">
+        <option th:value="'not chosen'" th:text="'Choose preferred role'"></option>
+        <option th:value="'Mid-Lane'" th:text="'Mid-Lane'"></option>
+        <option th:value="'Carry'" th:text="'Carry'"></option>
+        <option th:value="'Off-Lane'" th:text="'Off-Lane'"></option>
+        <option th:value="'Roaming Support'" th:text="'Roaming Support'"></option>
+        <option th:value="'Supreme'" th:text="'Hard Support'"></option>
+    </select> <br>
+
+    <input type="Submit" value="Submit">
+</form>
+</body>
+</html>
