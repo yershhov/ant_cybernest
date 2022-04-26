@@ -24,7 +24,7 @@ div{
 }
 .header{
     width: 100%;
-    height: 12vh;
+    height: 11vh;
     position: fixed;
     z-index: 2;
     display: flex;
@@ -38,12 +38,14 @@ div{
    
 }
 .icon{
-    flex: 1 0 5vw;
+    flex-grow: 0;
+    flex-basis: 10vh;
+    flex-shrink: 0;
     justify-items: flex-start;
-    width: auto;
-    height: 100%;
+    width: 4vw;
+    height: 10vh;
     margin-right: 1vw;
-    border: #000 solid 1px;
+    border: #000 solid 1px; 
     background-color: rgb(44, 44, 44);
     border-radius: 15%;
     
@@ -71,7 +73,7 @@ a:hover{
     color: rgb(74, 74, 74);
 }
 .container{
-    margin-top: 12vh;
+    margin-top: 11vh;
     display: flex;
     flex-direction: column;
     flex: auto;
@@ -140,17 +142,28 @@ hr{
     letter-spacing: 0.5vw;
 }
 .sec_scroll{
-    background-color: rgb(65, 0, 44);
+    background-color: #222;
     flex-basis: 35vh;
-    padding: 3vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: 2vw;
     font-weight: 100;
-    
-}
-.we, .after_we{
-    margin: 1vw;
     text-align: center;
+    padding: 5vw;
+}
+.talent{
+    font-size: 5vw;
+    margin-bottom: 5vh;
+
+}
+.before_we{
+    font-size: 2vw;
+    margin-bottom: 3vh;
+}
+.we{
+    font-size: 1.3vw;
+}
+.third_scroll{
+    background-color: ;
 }
