@@ -45,8 +45,8 @@ div{
     width: 4vw;
     height: 10vh;
     margin-right: 1vw;
-    border: #000 solid 1px; 
-    background-color: rgb(44, 44, 44);
+    /* border: #000 solid 1px;  */
+    /* background-color: rgb(44, 44, 44); */
     border-radius: 15%;
     
 }
@@ -164,6 +164,33 @@ hr{
 .we{
     font-size: 1.3vw;
 }
+.join_us{
+    margin-top: 10vh;
+}
+.join_btn{
+    min-width: 15vw;
+    min-height: 10vh;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    background-color: #FFFF;
+    border: none;
+}
+.join_us :hover{
+    background-color: rgb(54, 54, 54);
+    color: #FFFF;
+    transition: 0.7s;
+}
 .third_scroll{
-    background-color: ;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(24, 24, 24);
+}
+.reviews{
+    display: flex;
+    
+}
+.nothing{
+    min-height: 20vh;
+    background-color: aquamarine;
+    
 }
