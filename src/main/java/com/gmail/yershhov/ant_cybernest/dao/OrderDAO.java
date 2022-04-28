@@ -17,8 +17,8 @@ public class OrderDAO {
     }
 
     public void save(Order order) {
-        jdbcTemplate.update("insert into orders values(default, ?, ?, ?, ?, ?, ?, ?)",
-                order.getGame(), order.getName(), order.getSurname(), order.getEmail(),
+        jdbcTemplate.update("insert into orders values(default, ?, ?, ?, ?, ?, ?)",
+                order.getGame(), order.getFullName(), order.getEmail(),
                 order.getPhone(), order.getExperience(), order.getPreferredRole());
     }
 
