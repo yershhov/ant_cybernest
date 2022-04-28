@@ -193,15 +193,12 @@ hr{
     align-self: center;
     text-align: center;
     font-size: 5vw;
+    font-weight: 100;
 }
 .review_body{
     display: flex;
     justify-content: space-around;
     
-}
-
-.fifth_scroll{
-    height: 150vh;
 }
 .cadian, .zxcursed, .nata{
     width: 45vh;
@@ -230,4 +227,18 @@ hr{
 .join_us :hover{
     color: #FFFF;
     background-color: rgb(54, 54, 54);
+}
+.edu{
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+.edu_head{
+    justify-self: center;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 100;
+}
+.fourth_scroll{
+    display: flex;
 }
