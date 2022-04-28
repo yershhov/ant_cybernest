@@ -168,32 +168,13 @@ hr{
     font-size: 1.0vw;
     /* font-size: 1.3vmax; */
 }
-.join_btn{
-    min-width: 30vh;
-    min-height: 10vh;
-    border: #000 solid 1px;
-    border-radius: 10px;
-    background-color: #FFFF;
-    border: none;
-}
-.join_us :hover{
-    background-color: rgb(54, 54, 54);
-    color: #FFFF;
-    transition: 0.7s;
-}
 .third_scroll{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: rgb(24, 24, 24); */
-    background-color: antiquewhite;
+    background-color: rgb(24, 24, 24);
 
-}
-.join_us{
-    margin-top: 10vh;
-    justify-self: center;
-    align-self: center;
 }
 .reviews{
     display: flex;
@@ -234,4 +215,19 @@ hr{
 }
 .nata{
     margin-right: 4%;
+}
+.join_us{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+.join_btn{
+    width: 12rem;
+    height: 4rem;
+    border: none;
+    border-radius: 0.45rem;
+}
+.join_us :hover{
+    color: #FFFF;
+    background-color: rgb(54, 54, 54);
 }
