@@ -2,8 +2,7 @@ package com.gmail.yershhov.ant_cybernest.entities;
 
 public class Order {
     private String game;
-    private String name;
-    private String surname;
+    private String fullName;
     private String email;
     private String phone;
     private String experience;
@@ -30,13 +29,6 @@ public class Order {
         this.game = game;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 
     public String getPhone() {
         return phone;
@@ -46,12 +38,12 @@ public class Order {
         this.phone = phone;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {

@@ -16,9 +16,7 @@
 <div class="form">
     <form th:method="POST" th:action="@{/ordercourse/success}" th:object="${order}">
 
-        <input type="text" th:field="*{name}" id="name" placeholder="Name"> <br>
-
-        <input type="text" th:field="*{surname}" id="surname" placeholder="Surname"> <br>
+        <input type="text" th:field="*{fullName}" id="name" placeholder="Full name"> <br>
 
         <input type="text" th:field="*{email}" id="email" placeholder="Email"> <br>
 
