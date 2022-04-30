@@ -140,6 +140,7 @@ hr{
 .our_surname{
     font-size: 3vw;
     letter-spacing: 0.5vw;
+    
 }
 .sec_scroll{
     background-color: #222;
@@ -209,6 +210,7 @@ hr{
 }
 .cadian_text, .nft_text, .zxc_text{
     margin-top: 3%;
+    font-size: 1.6vw;
 }
 .nata{
     margin-right: 4%;
@@ -231,14 +233,45 @@ hr{
 .edu{
     display: flex;
     flex-direction: column;
-    padding: 5rem;
+    height: auto;
 }
 .edu_head{
     justify-self: center;
     text-align: center;
     font-size: 3vw;
     font-weight: 100;
+    margin-top: 10%;
 }
 .fourth_scroll{
     display: flex;
+    flex-direction: column;
+}
+.course_descrip, .macro, .micro{
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin-bottom: 10%;
+    justify-content: space-between;
+    margin-top: 0;
+}
+.course_descrip{
+    margin-top: 10%;
+}
+.micro{
+    margin-bottom: 10%;
+}
+.edu_body{
+      
+}
+.course_img{
+    width: 30rem;
+    min-width: 5rem;
+    margin-right: 15%;
+}
+.course_text{
+    margin-right: 4%;
+    margin-left: 15%;
+    font-size: 1.6vw;
+    text-align: justify;
+    font-weight: 100;
 }
