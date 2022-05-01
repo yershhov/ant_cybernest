@@ -245,6 +245,7 @@ hr{
 .fourth_scroll{
     display: flex;
     flex-direction: column;
+    background-color: #222;
 }
 .course_descrip, .macro, .micro{
     display: flex;
@@ -274,4 +275,8 @@ hr{
     font-size: 1.6vw;
     text-align: justify;
     font-weight: 100;
+}
+.references{
+    display: flex;
+    justify-content: space-between;
 }
