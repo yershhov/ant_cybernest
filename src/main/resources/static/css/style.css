@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap');
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,22 +8,26 @@
     transition: all 0.3s;
     letter-spacing: 0.25vw;
 }
-body{
+
+body {
     color: #FFFF;
     width: 100%;
 }
-div{
+
+div {
     width: 100%;
     z-index: 1;
     /* border: #FFFF solid 1px; */
 }
-.wrapper{
+
+.wrapper {
     height: auto;
     background-color: #222;
     display: flex;
     flex-direction: column;
 }
-.header{
+
+.header {
     width: 100%;
     height: 11vh;
     position: fixed;
@@ -34,10 +39,11 @@ div{
     font-size: 3vw;
     font-weight: 100;
     padding: 0.5vw;
-    
-   
+
+
 }
-.icon{
+
+.icon {
     flex-grow: 0;
     flex-basis: 10vh;
     flex-shrink: 0;
@@ -48,68 +54,80 @@ div{
     /* border: #000 solid 1px;  */
     /* background-color: rgb(44, 44, 44); */
     border-radius: 15%;
-    
+
 }
-img{
+
+img {
     width: 100%;
     height: 100%;
-    
+
 }
-#item1{
+
+#item1 {
     /* border-left: rgb(34, 34, 34) solid 1px; */
 }
-.items{
+
+.items {
     height: auto;
     align-self: center;
     text-align: center;
     justify-self: center;
     border-left: rgb(34, 34, 34) solid 1px;
 }
-a{
+
+a {
     text-decoration: none;
     color: #FFFF;
 }
-a:hover{
+
+a:hover {
     color: rgb(74, 74, 74);
 }
-.container{
+
+.container {
     margin-top: 11vh;
     display: flex;
     flex-direction: column;
     flex: auto;
     background-color: #222;
 }
-.main{
+
+.main {
     flex: auto;
     display: flex;
     flex-direction: column;
 }
-.footer{
+
+.footer {
     flex-basis: 25vh;
     background-color: rgb(24, 24, 24);
 
 }
-.first_scroll{
+
+.first_scroll {
     height: 88vh;
     /* border: #FFFF solid 1px; */
     width: 100%;
     display: flex;
     align-content: center;
-    
+
 }
-.vid{
+
+.vid {
     z-index: 0;
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
-video{
+
+video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
+
 }
-.text{
+
+.text {
     z-index: 1;
     position: absolute;
     /* justify-self: center; */
@@ -119,30 +137,37 @@ video{
     flex-direction: column;
     font-weight: 100;
 }
-.line{
+
+.line {
     justify-self: center;
     align-self: center;
 }
-hr{
+
+hr {
     margin: auto;
     width: 75vw;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    
+
 }
-.our_name{
+
+.our_name {
     font-size: 7vw;
     letter-spacing: 0.7vw;
 }
-.our_name, .our_surname{
+
+.our_name,
+.our_surname {
     width: 100%;
 }
-.our_surname{
+
+.our_surname {
     font-size: 3vw;
     letter-spacing: 0.5vw;
-    
+
 }
-.sec_scroll{
+
+.sec_scroll {
     background-color: #222;
     flex-basis: 35vh;
     display: flex;
@@ -152,24 +177,28 @@ hr{
     text-align: center;
     padding: 5vw;
 }
-.talent{
+
+.talent {
     /* font-size: 5vmax; */
     font-size: 4vw;
     /* margin-bottom: 5vmin; */
     margin-bottom: 5vh;
 
 }
-.before_we{
+
+.before_we {
     font-size: 2vw;
     /* font-size: 2vmax; */
     margin-bottom: 3vh;
     /* margin-bottom: 3vmin; */
 }
-.we{
+
+.we {
     font-size: 1.0vw;
     /* font-size: 1.3vmax; */
 }
-.third_scroll{
+
+.third_scroll {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,76 +206,96 @@ hr{
     background-color: rgb(24, 24, 24);
 
 }
-.reviews{
+
+.reviews {
     display: flex;
     flex-direction: column;
-    
-    
+
+
 }
-.review_head{
+
+.review_head {
     height: 20vw;
     background-color: rgb(24, 24, 24);
     display: flex;
     align-content: center;
-    
+
 }
-.head_text{
+
+.head_text {
     align-self: center;
     text-align: center;
     font-size: 5vw;
     font-weight: 100;
 }
-.review_body{
+
+.review_body {
     display: flex;
     justify-content: space-around;
-    
+
 }
-.cadian, .zxcursed, .nata{
+
+.cadian,
+.zxcursed,
+.nata {
     width: 45vh;
     margin-left: 4%;
-    
+
     text-align: center;
 
 }
-.cadian_text, .nft_text, .zxc_text{
+
+.cadian_text,
+.nft_text,
+.zxc_text {
     margin-top: 3%;
     font-size: 1.6vw;
 }
-.nata{
+
+.nata {
     margin-right: 4%;
 }
-.join_us{
+
+.join_us {
     text-align: center;
     margin-top: 3em;
     margin-bottom: 3em;
 }
-.join_btn{
+
+.join_btn {
     width: 12rem;
     height: 4rem;
     border: none;
     border-radius: 0.45rem;
 }
-.join_us :hover{
+
+.join_us :hover {
     color: #FFFF;
     background-color: rgb(54, 54, 54);
 }
-.edu{
+
+.edu {
     display: flex;
     flex-direction: column;
     height: auto;
 }
-.edu_head{
+
+.edu_head {
     justify-self: center;
     text-align: center;
     font-size: 3vw;
     font-weight: 100;
     margin-top: 10%;
 }
-.fourth_scroll{
+
+.fourth_scroll {
     display: flex;
     flex-direction: column;
 }
-.course_descrip, .macro, .micro{
+
+.course_descrip,
+.macro,
+.micro {
     display: flex;
     align-items: center;
     height: auto;
@@ -254,40 +303,105 @@ hr{
     justify-content: space-between;
     margin-top: 0;
 }
-.course_descrip{
+
+.course_descrip {
     margin-top: 10%;
 }
-.micro{
+
+.micro {
     margin-bottom: 10%;
 }
-.edu_body{
-      
+
+.edu_body {}
+
+.application:after {
+    content: "";
+    display: table;
+    clear: both;
+    display: flex;
 }
-.apply{
+
+.apply {
     text-align: center;
     margin-top: 3em;
     margin-bottom: 3em;
+    float: left;
+    flex: 50%;
+    width: 50%;
+    padding: 3em;
 }
-.apply_btn{
+
+.apply_btn {
     width: 12rem;
     height: 4rem;
     border: none;
     border-radius: 0.45rem;
 }
-.apply :hover{
+
+.apply :hover {
     color: #FFFF;
     background-color: rgb(54, 54, 54);
 }
-.reg_form{
-    background-color: pink;
-    height: 10rem;
-}
-.course_img{
+.form_holder {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    color:black;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.course_img {
     width: 30rem;
     min-width: 5rem;
     margin-right: 15%;
 }
-.course_text{
+
+.course_text {
     margin-right: 4%;
     margin-left: 15%;
     font-size: 1.6vw;
