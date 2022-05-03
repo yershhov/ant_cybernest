@@ -34,7 +34,7 @@ div {
     z-index: 2;
     display: flex;
     /* background-color: rgb(24, 24, 24); */
-    background-color: rgba(0, 0, 0, 0.837);
+    background-color: rgba(0, 0, 0, 0.95);
     align-items: center;
     justify-content: space-around;
     font-size: 3vw;
@@ -398,7 +398,7 @@ hr {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    z-index: 100;
     /* Sit on top */
     padding-top: 100px;
     /* Location of the box */
@@ -423,6 +423,10 @@ hr {
     height: 60vh;
     margin: auto;
     margin-top: 10vh;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    
 }
 
 
@@ -441,8 +445,8 @@ hr {
 }
 
 .modal-body {
-   padding-top: 20vh;
-   padding-bottom: 20vh;
+   padding: 5%;
+
 }
 
 .modal-footer {
@@ -467,4 +471,23 @@ hr {
 .references {
     display: flex;
     justify-content: space-between;
+}
+
+.inp, .select{
+    padding: 2%;
+    text-align: left;
+    border: 1px solid rgb(54, 54, 54);
+    border-radius: 10px;
+    background-color: #222;
+    color: rgb(54, 54, 54);
+    height: 7vh;
+    margin-bottom: 2%;
+    width: 12rem;
+    
+}
+.subm{
+    width: 12rem;
+    height: 3rem;
+    border: none;
+    border-radius: 0.45rem;
 }
