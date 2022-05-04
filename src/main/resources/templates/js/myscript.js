@@ -8,7 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const scrollTarget = document.getElementById(href);
 
         // const topOffset = document.querySelector('.scrollto').offsetHeight;
-        const topOffset = 300;      //  отступ для навбара
+        const topOffset = 50;      //  отступ для навбара
         const elementPosition = scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 
