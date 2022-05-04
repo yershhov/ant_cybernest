@@ -426,7 +426,7 @@ hr {
     z-index: 100;
     display: flex;
     align-items: center;
-    
+    border-radius: 10px;
 }
 
 
@@ -476,17 +476,35 @@ hr {
 .inp, .select{
     padding: 2%;
     text-align: left;
-    border: 1px solid rgb(54, 54, 54);
+    border: 2px solid rgb(54, 54, 54);
     border-radius: 10px;
     background-color: #222;
-    color: rgb(54, 54, 54);
+    color: rgb(204, 204, 204);
     height: 7vh;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     width: 12rem;
     
 }
-.subm{
+.inp2{
+    padding: 2%;
+    text-align: right;
+    border: 2px solid rgb(54, 54, 54);
+    border-radius: 10px;
+    background-color: #222;
+    color: rgb(204, 204, 204);
+    height: 7vh;
+    margin-bottom: 4%;
     width: 12rem;
+}
+::placeholder, .select{
+    color: rgb(114, 114, 114);
+}
+option{
+    color: rgb(204, 204, 204);
+}
+
+.subm{
+    width: 5rem;
     height: 3rem;
     border: none;
     border-radius: 0.45rem;

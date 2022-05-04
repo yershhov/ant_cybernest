@@ -138,17 +138,37 @@
                         <!-- Modal content -->
                         <div class="modal-content">
 
-                            <div class="modal-header">
-                                <span class="close">&times;</span>
-                                <h2>Ало это кто</h2>
-                            </div>
+                            <!-- <div class="modal-header">
+                                
+                            </div> -->
                             <div class="modal-body">
-                                <p>Михалпалыч</p>
-                                <p>какой Михал Палыч</p>
+                                <form>
+                                    
+                                    <div><input type="text" id="name" class="inp" placeholder="Full name"> </div>
+                            
+                                    <div><input type="text" id="email" class="inp" placeholder="Email"></div>
+                            
+                                    <div><input type="text" id="phone" class="inp" placeholder="Phone number"></div>
+                            
+                                    <div >
+                                    
+                                        <select id="experience" class="select" label="zhopa">
+                                            <option value="" disabled selected hidden>In-game rank</option>
+                                            <option value="'Silver'" label="Silver"></option>
+                                            <option value="'Gold Nova'" label="Gold Nova"></option>
+                                            <option value="'Master Guardian'" label="Master Guardian"></option>
+                                            <option value="'Legendary Eagle'" label="Legendary Eagle"></option>
+                                            <option value="'Supreme'" label="Supreme"></option>
+                                            <option value="'Global Elite'" label="Global Elite"></option>
+                                        </select>
+                                    </div>
+                                    <div ><input type="submit" value="Submit" class="subm"></div>
+                                    
+                                </form>
                             </div>
-                            <div class="modal-footer">
+                            <!-- <div class="modal-footer">
                                 <h3>Терентьев</h3>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -169,17 +189,18 @@
                                     <div><input type="text" id="email" class="inp" placeholder="Email"></div>
                             
                                     <div><input type="text" id="phone" class="inp" placeholder="Phone number"></div>
-                            
+
+                                    <div><input type="text" id="experience" class="inp" placeholder="Current MMR"></div>
+                                     
                                     <div >
                                         
-                                        <select id="experience" class="select" label="zhopa">
-                                            <option value="" disabled selected class="val">In-game rank</option>
-                                            <option value="'Silver'" label="'Silver'"></option>
-                                            <option value="'Gold Nova'" label="'Gold Nova'"></option>
-                                            <option value="'Master Guardian'" label="'Master Guardian'"></option>
-                                            <option value="'Legendary Eagle'" label="'Legendary Eagle'"></option>
-                                            <option value="'Supreme'" label="'Supreme'"></option>
-                                            <option value="'Global Elite'" label="'Global Elite'"></option>
+                                        <select id="preferredRole" class="select" label="zhopa">
+                                            <option value="" disabled selected hidden> Preferred role</option>
+                                            <option value="'Mid-Lane'" label="Mid-Lane"></option>
+                                            <option value="'Carry'" label="Carry"></option>
+                                            <option value="'Off-Lane'" label="Off-Lane"></option>
+                                            <option value="'Roaming Support'" label="Roaming Support"></option>
+                                            <option value="'Supreme'" label="Hard Support"></option>
                                         </select>
                                     </div>
                                     <div ><input type="submit" value="Submit" class="subm"></div>
