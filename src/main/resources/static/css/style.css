@@ -56,6 +56,8 @@ div {
     /* background-color: rgb(44, 44, 44); */
     border-radius: 15%;
 
+    /* background:  url(../icons/besticonever_reverse.png); */
+
 }
 
 img {
@@ -100,7 +102,7 @@ a:hover {
 }
 
 .footer {
-    flex-basis: 25vh;
+    /* flex-basis: 25vh; */
     background-color: rgb(24, 24, 24);
     display: flex;
     flex-direction: column;
@@ -110,6 +112,8 @@ a:hover {
     color: rgba(242, 242, 242, 0.461);
     font-weight: 500;
     font-size: 0.7rem;
+    z-index: 0;
+
 
 }
 
@@ -423,8 +427,9 @@ hr {
     height: 60vh;
     margin: auto;
     margin-top: 10vh;
-    z-index: 100;
+    z-index: 101;
     display: flex;
+    
     align-items: center;
     border-radius: 10px;
 }
