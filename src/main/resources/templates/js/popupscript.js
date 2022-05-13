@@ -17,7 +17,7 @@ btn1.onclick = function () {
     modal.style.display = "block";
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = "none";
         }
     }
@@ -32,7 +32,7 @@ btn2.onclick = function () {
     modal.style.display = "block";
 
     window.onclick = function (event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = "none";
         }
     }
