@@ -4,9 +4,7 @@ public class Order {
     private String game;
     private User user;
 
-
-    public Order(String game) {
-        this.game = game;
+    public Order() {
     }
 
     public User getUser() {
@@ -20,14 +18,6 @@ public class Order {
     public String getGame() {
         return game;
     }
-
-    public void setGame(String game) {
-        this.game = game;
-    }
-
-
-
-
 }
 
 

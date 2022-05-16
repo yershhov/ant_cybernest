@@ -4,13 +4,13 @@
 <head>
     <title>ant</title>
     <!-- for index -->
-       <!-- <link rel="shortcut icon" type="image/x-icon" href="../static/icons/besticonever_reverse_icon.png" /> -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="../static/icons/besticonever_reverse_icon.png" /> -->
 
     <!-- for java -->
     <link rel="shortcut icon" type="image/x-icon" href="icons/besticonever_reverse_icon.png"/>
 
     <!-- for index -->
-       <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
 
     <!-- for java -->
     <link rel="stylesheet" href="/css/style.css">
@@ -41,7 +41,7 @@
                     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
                     <script>
                         var typed = new Typed(".auto-type", {
-                            strings: ["Push yourself to the limit", "Stay consistent", "Erase your enemies", "Pass the EGE"],
+                            strings: ["Push yourself to the limit", "Stay consistent", "Erase your enemies"],
                             typeSpeed: 100,
                             backSpeed: 50,
                             loop: true
@@ -50,7 +50,9 @@
                 </div>
 
                 <!-- <div class="vid"><video src="../static/videos/bgvideo.mp4" autoplay muted loop></video></div> -->
-                <div class="vid"><video src="/videos/bgvideo.mp4" autoplay muted loop></video></div>
+                <div class="vid">
+                    <video src="/videos/bgvideo.mp4" autoplay muted loop></video>
+                </div>
             </div>
             <div class="sec_scroll" id="tal">
                 <div class="talent">YOU'RE A TALENT</div>
@@ -152,9 +154,40 @@
 
                         </div> -->
                         <div class="modal-body">
-                            <form>
-
-                                cscscs
+                            <form th:method="POST" th:action="@{/cspost}">
+                                <div class="row">
+                                    <div class="column1">
+                                        <input type="text" class="inp" th:field="*{user.fullName}" placeholder="Full Name">
+                                    </div>
+                                    <div class="column2">
+                                        <input type="text" class="inp" th:field="*{user.email}" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column1">
+                                        <input type="text" class="inp" th:field="*{user.phone}" placeholder="Phone">
+                                    </div>
+                                    <div class="column2">
+                                        <select name="" id="sel" class="select" th:field="*{user.experience}">
+                                            <option th:value="'Not mentioned'" th:text="'Current Rank'"></option>
+                                            <option th:value="'Silver'" th:text="'Silver'"></option>
+                                            <option th:value="'Gold Nova'" th:text="'Gold Nova'"></option>
+                                            <option th:value="'Master Guardian'" th:text="'Master Guardian'"></option>
+                                            <option th:value="'Legendary Eagle'" th:text="'Legendary Eagle'"></option>
+                                            <option th:value="'Global Elite'" th:text="'Global Elite'"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bestmap">
+                                    <select name="" id="sel4" class="select" th:field="*{csorder.bestMap}">
+                                        <option th:value="'Not mentioned'" th:text="'Best Map'"></option>
+                                        <option th:value="'Mirage'" th:text="'Mirage'"></option>
+                                        <option th:value="'Inferno'" th:text="'Inferno'"></option>
+                                        <option th:value="'Overpass'" th:text="'Overpass'"></option>
+                                        <option th:value="'Nuke'" th:text="'Nuke'"></option>
+                                    </select>
+                                </div>
+                                <input type="submit" class="subm" value="Submit">
                             </form>
                         </div>
                         <!-- <div class="modal-footer">
@@ -173,9 +206,47 @@
                             <h2>Ало звоню тебе с айфона 13 про</h2>
                         </div> -->
                         <div class="modal-body">
-                            <form>
-                                dotadotadota
+                            <form th:method="POST" th:action="@{/dotapost}">
+                                <div class="row">
+                                    <div class="column1">
+                                        <input type="text" class="inp2" th:field="*{user.fullName}"
+                                               placeholder="Full Name">
+                                    </div>
+                                    <div class="column2">
+                                        <input type="text" class="inp2" th:field="*{user.experience}"
+                                               placeholder="Current MMR">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column1">
+                                        <input type="text" class="inp2" th:field="*{user.email}" placeholder="Email">
+                                    </div>
+                                    <div class="column2">
+                                        <select name="" id="sel2" class="select" th:field="*{dotaorder.role}">
+                                            <option th:value="'Not mentioned'" th:text="'Preferred Role'"></option>
+                                            <option th:value="'Carry'" th:text="'Carry'"></option>
+                                            <option th:value="'Off-Lane'" th:text="'Off-Lane'"></option>
+                                            <option th:value="'Mid-Lane'" th:text="'Mid-Lane'"></option>
+                                            <option th:value="'Support'" th:text="'Support'"></option>
+                                            <option th:value="'Hard Support'" th:text="'Hard Support'"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column1">
+                                        <input type="text" class="inp2" th:field="*{user.phone}" placeholder="Phone">
+                                    </div>
+                                    <div class="column2">
+                                        <select name="" id="sel3" class="select" th:field="*{dotaorder.communication}">
+                                            <option th:value="'Not mentioned'" th:text="'Communication'"></option>
+                                            <option th:value="'Discord'" th:text="'Discord'"></option>
+                                            <option th:value="'TeamSpeak'" th:text="'TeamSpeak'"></option>
+                                            <option th:value="'Skype'" th:text="'Skype'"></option>
+                                        </select>
+                                    </div>
+                                </div>
 
+                                <input type="submit" class="subm" value="Submit">
                             </form>
                         </div>
                         <!-- <div class="modal-footer">
