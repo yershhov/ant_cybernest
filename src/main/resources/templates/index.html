@@ -26,6 +26,7 @@
         <div class="items" id="item1"><a href="#tal">Talent</a></div>
         <div class="items"><a href="#cust">Our customers</a></div>
         <div class="items"><a href="#more">More</a></div>
+        <div class="icon"><a href=""><img src="/icons/profile3.png" alt="profile" id="profile_icon"></a></div>
 
     </div>
     <div class="container">
@@ -168,8 +169,9 @@
                                         <input type="text" class="inp" th:field="*{user.phone}" placeholder="Phone">
                                     </div>
                                     <div class="column2">
-                                        <select name="" id="sel" class="select" th:field="*{user.experience}">
-                                            <option th:value="'Not mentioned'" th:text="'Current Rank'"></option>
+                                        <select name="experience" id="experience" class="select">
+                                            <option th:value="'Not mentioned'" th:text="'Current Rank'" th:selected="selected"
+                                                    th:disabled="disabled"></option>
                                             <option th:value="'Silver'" th:text="'Silver'"></option>
                                             <option th:value="'Gold Nova'" th:text="'Gold Nova'"></option>
                                             <option th:value="'Master Guardian'" th:text="'Master Guardian'"></option>
@@ -179,8 +181,9 @@
                                     </div>
                                 </div>
                                 <div class="bestmap">
-                                    <select name="" id="sel4" class="select" th:field="*{csorder.bestMap}">
-                                        <option th:value="'Not mentioned'" th:text="'Best Map'"></option>
+                                    <select name="bestMap" id="bestMap" class="select">
+                                        <option th:value="'Not mentioned'" th:text="'Best Map'" th:selected="selected"
+                                                th:disabled="disabled"></option>
                                         <option th:value="'Mirage'" th:text="'Mirage'"></option>
                                         <option th:value="'Inferno'" th:text="'Inferno'"></option>
                                         <option th:value="'Overpass'" th:text="'Overpass'"></option>
@@ -209,21 +212,20 @@
                             <form th:method="POST" th:action="@{/dotapost}">
                                 <div class="row">
                                     <div class="column1">
-                                        <input type="text" class="inp2" th:field="*{user.fullName}"
-                                               placeholder="Full Name">
+                                        <input type="text" class="inp" th:field="*{user.fullName}" placeholder="Full Name">
                                     </div>
                                     <div class="column2">
-                                        <input type="text" class="inp2" th:field="*{user.experience}"
-                                               placeholder="Current MMR">
+                                        <input type="text" class="inp" th:field="*{user.experience}" placeholder="Current MMR">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="column1">
-                                        <input type="text" class="inp2" th:field="*{user.email}" placeholder="Email">
+                                        <input type="text" class="inp" th:field="*{user.email}" placeholder="Email">
                                     </div>
                                     <div class="column2">
-                                        <select name="" id="sel2" class="select" th:field="*{dotaorder.role}">
-                                            <option th:value="'Not mentioned'" th:text="'Preferred Role'"></option>
+                                        <select name="role" id="role" class="select">
+                                            <option th:value="'Not mentioned'" th:text="'Preferred Role'" th:selected="selected"
+                                                    th:disabled="disabled"></option>
                                             <option th:value="'Carry'" th:text="'Carry'"></option>
                                             <option th:value="'Off-Lane'" th:text="'Off-Lane'"></option>
                                             <option th:value="'Mid-Lane'" th:text="'Mid-Lane'"></option>
@@ -234,18 +236,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="column1">
-                                        <input type="text" class="inp2" th:field="*{user.phone}" placeholder="Phone">
+                                        <input type="text" class="inp" th:field="*{user.phone}" placeholder="Phone">
                                     </div>
                                     <div class="column2">
-                                        <select name="" id="sel3" class="select" th:field="*{dotaorder.communication}">
-                                            <option th:value="'Not mentioned'" th:text="'Communication'"></option>
+                                        <select name="communication" id="communication" class="select">
+                                            <option th:value="'Not mentioned'" th:text="'Communication'" th:selected="selected"
+                                                    th:disabled="disabled"></option>
                                             <option th:value="'Discord'" th:text="'Discord'"></option>
                                             <option th:value="'TeamSpeak'" th:text="'TeamSpeak'"></option>
                                             <option th:value="'Skype'" th:text="'Skype'"></option>
                                         </select>
                                     </div>
                                 </div>
-
                                 <input type="submit" class="subm" value="Submit">
                             </form>
                         </div>
@@ -307,3 +309,78 @@
 </body>
 
 </html>
+<!--<form>-->
+<!--    <div class="row">-->
+<!--        <div class="column1">-->
+<!--            <input type="text" class="inp" placeholder="Full Name">-->
+<!--        </div>-->
+<!--        <div class="column2">-->
+<!--            <input type="text" class="inp" placeholder="Current MMR">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="column1">-->
+<!--            <input type="text" class="inp" placeholder="Email">-->
+<!--        </div>-->
+<!--        <div class="column2">-->
+<!--            <select name="role" id="role" class="select">-->
+<!--                <option value="Not mentioned" selected disabled>Preferred Role</option>-->
+<!--                <option value="Carry">Carry</option>-->
+<!--                <option value="Off-Lane">Off-Lane</option>-->
+<!--                <option value="Mid-Lane">Mid-Lane</option>-->
+<!--                <option value="Support">Support</option>-->
+<!--                <option value="Hard Support">Hard Support</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="column1">-->
+<!--            <input type="text" class="inp" placeholder="Phone">-->
+<!--        </div>-->
+<!--        <div class="column2">-->
+<!--            <select name="communication" id="communication" class="select">-->
+<!--                <option value="Not mentioned" selected disabled>Communication</option>-->
+<!--                <option value="Discord">Discord</option>-->
+<!--                <option value="TeamSpeak">TeamSpeak</option>-->
+<!--                <option value="Skype">Skype</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <input type="submit" class="subm" value="Submit">-->
+<!--</form>-->
+<!--======================================================================================-->
+<!--<form>-->
+<!--    <div class="row">-->
+<!--        <div class="column1">-->
+<!--            <input type="text" class="inp" placeholder="Full Name">-->
+<!--        </div>-->
+<!--        <div class="column2">-->
+<!--            <input type="text" class="inp" placeholder="Email">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="column1">-->
+<!--            <input type="text" class="inp" placeholder="Phone">-->
+<!--        </div>-->
+<!--        <div class="column2">-->
+<!--            <select name="experience" id="experience" class="select">-->
+<!--                <option value="Not mentioned" selected disabled>Current Rank</option>-->
+<!--                <option value="Silver">Silver</option>-->
+<!--                <option value="Gold Nova">Gold Nova</option>-->
+<!--                <option value="Master Guardian">Master Guardian</option>-->
+<!--                <option value="Legendary Eagle">Legendary Eagle</option>-->
+<!--                <option value="Global Elite">Global Elite</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="bestmap">-->
+<!--        <select name="bestMap" id="bestMap" class="select">-->
+<!--            <option value="Not mentioned" selected disabled>Best Map</option>-->
+<!--            <option value="Mirage">Mirage</option>-->
+<!--            <option value="Inferno">Inferno</option>-->
+<!--            <option value="Overpass">Overpass</option>-->
+<!--            <option value="Nuke">Nuke</option>-->
+<!--        </select>-->
+<!--    </div>-->
+<!--    <input type="submit" class="subm" value="Submit">-->
+<!--</form>-->

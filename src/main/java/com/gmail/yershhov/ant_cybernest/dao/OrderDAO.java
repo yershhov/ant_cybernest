@@ -22,12 +22,7 @@ public class OrderDAO {
 //                order.getGame(), order.getUser().getFullName(), order.getUser().getEmail(),
 //                order.getUser().getPhone(), order.getUser().getExperience());
     public void save(CsOrder order) {
-            System.out.println(order.getGame());
-            System.out.println(order.getUser().getFullName());
-            System.out.println(order.getUser().getEmail());
-            System.out.println(order.getUser().getPhone());
-            System.out.println(order.getUser().getExperience());
-            System.out.println(order.getBestMap());
+
     }
     public void save(DotaOrder order){
             System.out.println(order.getGame());

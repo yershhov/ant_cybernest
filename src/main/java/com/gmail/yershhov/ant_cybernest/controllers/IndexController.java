@@ -31,6 +31,7 @@ public class IndexController {
 
     @PostMapping("/cspost")
     public String save(@ModelAttribute("user") User user, @ModelAttribute("csorder") CsOrder csOrder) {
+        csOrder.setGame("CS:GO");
         csOrder.setUser(user);
         orderDAO.save(csOrder);
         return "redirect:/response/success";
@@ -38,6 +39,7 @@ public class IndexController {
 
     @PostMapping("/dotapost")
     public String save(@ModelAttribute("user") User user, @ModelAttribute("dotaorder") DotaOrder dotaOrder) {
+        dotaOrder.setGame("Dota 2");
         dotaOrder.setUser(user);
         orderDAO.save(dotaOrder);
         return "redirect:/response/success";
