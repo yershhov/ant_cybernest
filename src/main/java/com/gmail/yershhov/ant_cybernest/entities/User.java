@@ -1,49 +1,48 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
-public class User {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.SEQUENCE;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity(name = "User")
+@Table
+public class User{
+    @Id
+    @SequenceGenerator(
+            name = "user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = SEQUENCE;
+            generator = "user_sequence"
+    )
+    private Integer id;
+
     private String fullName;
     private String email;
     private String phone;
     private String experience;
-    private boolean registered = false;
+    private Boolean registered = false;
 
-    public boolean isRegistered() {
-        return registered;
-    }
-
-    public void setRegistered(boolean registered) {
-        this.registered = registered;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
+    public User(Integer id,
+                String fullName,
+                String email,
+                String phone,
+                String experience,
+                Boolean registered) {
+        this.id = id;
         this.fullName = fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
+        this.phone = phone;
+        this.experience = experience;
+        this.registered = registered;
     }
 }

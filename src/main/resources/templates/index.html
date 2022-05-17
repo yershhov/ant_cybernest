@@ -180,6 +180,14 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="column1">
+                                        <input type="text" class="inp" th:field="*{csorder.winRate}" placeholder="Win Rate(%)">
+                                    </div>
+                                    <div class="column2">
+                                        <input type="text" class="inp" th:field="*{csorder.hoursPlayed}" placeholder="In-game hours">
+                                    </div>
+                                </div>
                                 <div class="bestmap">
                                     <select name="bestMap" id="bestMap" class="select">
                                         <option th:value="'Not mentioned'" th:text="'Best Map'" th:selected="selected"
@@ -373,6 +381,14 @@
 <!--            </select>-->
 <!--        </div>-->
 <!--    </div>-->
+<!--<div class="row">-->
+<!--    <div class="column1">-->
+<!--        <input type="text" class="inp" placeholder="Win Rate(%)">-->
+<!--    </div>-->
+<!--    <div class="column2">-->
+<!--        <input type="text" class="inp" placeholder="In-game hours">-->
+<!--    </div>-->
+<!--</div>-->
 <!--    <div class="bestmap">-->
 <!--        <select name="bestMap" id="bestMap" class="select">-->
 <!--            <option value="Not mentioned" selected disabled>Best Map</option>-->

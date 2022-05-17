@@ -1,10 +1,19 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
 public class Order {
-    private String game;
     private User user;
+    private String game;
+    private Integer additionalPractice;
 
     public Order() {
+    }
+
+    public Integer getAdditionalPractice() {
+        return additionalPractice;
+    }
+
+    public void setAdditionalPractice(Integer additionalPractice) {
+        this.additionalPractice = additionalPractice;
     }
 
     public User getUser() {

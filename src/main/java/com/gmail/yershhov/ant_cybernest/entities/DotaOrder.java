@@ -4,6 +4,7 @@ public class DotaOrder extends Order{
     String role;
     String communication;
 
+
     public String getRole() {
         return role;
     }
