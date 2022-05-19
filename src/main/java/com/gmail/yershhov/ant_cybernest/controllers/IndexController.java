@@ -15,33 +15,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping()
 public class IndexController {
-    private final OrderDAO orderDAO;
-
-    public IndexController(OrderDAO orderDAO) {
-        this.orderDAO = orderDAO;
-    }
-
-    @GetMapping()
-    public String index(Model model1, Model model2, Model model3) {
-        model1.addAttribute("csorder", new CsOrder());
-        model2.addAttribute("user", new User());
-        model3.addAttribute("dotaorder", new DotaOrder());
-        return "index";
-    }
-
-    @PostMapping("/cspost")
-    public String save(@ModelAttribute("user") User user, @ModelAttribute("csorder") CsOrder csOrder) {
-        csOrder.setGame("CS:GO");
-        csOrder.setUser(user);
-        orderDAO.save(csOrder);
-        return "redirect:/response/success";
-    }
-
-    @PostMapping("/dotapost")
-    public String save(@ModelAttribute("user") User user, @ModelAttribute("dotaorder") DotaOrder dotaOrder) {
-        dotaOrder.setGame("Dota 2");
-        dotaOrder.setUser(user);
-        orderDAO.save(dotaOrder);
-        return "redirect:/response/success";
-    }
+//    private final OrderDAO orderDAO;
+//
+//    public IndexController(OrderDAO orderDAO) {
+//        this.orderDAO = orderDAO;
+//    }
+//
+//    @GetMapping()
+//    public String index(Model model1, Model model2, Model model3) {
+//        model1.addAttribute("csorder", new CsOrder());
+//        model2.addAttribute("user", new User());
+//        model3.addAttribute("dotaorder", new DotaOrder());
+//        return "index";
+//    }
+//
+//    @PostMapping("/cspost")
+//    public String save(@ModelAttribute("user") User user, @ModelAttribute("csorder") CsOrder csOrder) {
+//        csOrder.setGame("CS:GO");
+//        csOrder.setUser(user);
+//        orderDAO.save(csOrder);
+//        return "redirect:/response/success";
+//    }
+//
+//    @PostMapping("/dotapost")
+//    public String save(@ModelAttribute("user") User user, @ModelAttribute("dotaorder") DotaOrder dotaOrder) {
+//        dotaOrder.setGame("Dota 2");
+//        dotaOrder.setUser(user);
+//        orderDAO.save(dotaOrder);
+//        return "redirect:/response/success";
+//    }
 }

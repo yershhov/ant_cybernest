@@ -12,27 +12,27 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderDAO {
 
-    private final JdbcTemplate jdbcTemplate;
-
-    @Autowired
-    public OrderDAO(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-    //        jdbcTemplate.update("insert into users values(default, ?, ?, ?, ?, ?)",
-//                order.getGame(), order.getUser().getFullName(), order.getUser().getEmail(),
-//                order.getUser().getPhone(), order.getUser().getExperience());
-    public void save(CsOrder order) {
-
-    }
-    public void save(DotaOrder order){
-            System.out.println(order.getGame());
-            System.out.println(order.getUser().getFullName());
-            System.out.println(order.getUser().getEmail());
-            System.out.println(order.getUser().getPhone());
-            System.out.println(order.getUser().getExperience());
-            System.out.println(order.getRole());
-            System.out.println(order.getCommunication());
-    }
-
+//    private final JdbcTemplate jdbcTemplate;
+//
+//    @Autowired
+//    public OrderDAO(JdbcTemplate jdbcTemplate) {
+//        this.jdbcTemplate = jdbcTemplate;
+//    }
+//    //        jdbcTemplate.update("insert into users values(default, ?, ?, ?, ?, ?)",
+////                order.getGame(), order.getUser().getFullName(), order.getUser().getEmail(),
+////                order.getUser().getPhone(), order.getUser().getExperience());
+//    public void save(CsOrder order) {
+//
+//    }
+//    public void save(DotaOrder order){
+//            System.out.println(order.getGame());
+//            System.out.println(order.getUser().getFullName());
+//            System.out.println(order.getUser().getEmail());
+//            System.out.println(order.getUser().getPhone());
+//            System.out.println(order.getUser().getExperience());
+//            System.out.println(order.getRole());
+//            System.out.println(order.getCommunication());
+//    }
+//
 
 }
