@@ -62,13 +62,13 @@ div {
 .user_icon_div{
     
     flex-grow: 0;
-    flex-basis: 5vh;
+    flex-basis: 7vh;
     flex-shrink: 0;
     justify-items: flex-start;
-    height: 5vh;
+    height: 7vh;
     margin-right: 1vw;
-
     border-radius: 100%;
+    margin-left: 1rem;
     
     
 
@@ -98,6 +98,9 @@ img {
     text-align: center;
     justify-self: center;
     border-left: rgb(34, 34, 34) solid 1px;
+}
+.item_right{
+    border-right: rgb(34, 34, 34) solid 1px;
 }
 
 a {
@@ -397,6 +400,15 @@ hr {
     display: table;
     clear: both;
 }
+.choose{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 100;
+    margin: 3rem auto 3rem auto;
+}
+.fifth_scroll{
+    margin-bottom: 3rem;
+}
 
 .apply {
     text-align: center;
@@ -407,10 +419,21 @@ hr {
 }
 
 .apply_btn {
-    width: 12rem;
-    height: 4rem;
     border: none;
-    border-radius: 0.45rem;
+    border-radius: 20px;
+    height: 20rem;
+    width: 20rem;
+    background-color: #222;
+}
+.dota_img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 20px;
+}
+.csgo_img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 20px;
 }
 
 .apply :hover {
@@ -624,4 +647,8 @@ hr {
 .citten {
     width: 20rem;
     margin: 3rem auto 4rem auto;
+}
+.dancin{
+    display: flex;
+    flex-flow: row wrap;
 }
