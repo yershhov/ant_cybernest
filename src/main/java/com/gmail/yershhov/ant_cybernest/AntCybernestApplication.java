@@ -14,14 +14,4 @@ public class AntCybernestApplication {
         SpringApplication.run(AntCybernestApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(UserRepository userRepository){
-        return args -> {
-            User user = new User(
-                    "Illia Yershov", "yershhov@gmail.com",
-                    "+393515348377", "Silver", false
-            );
-            userRepository.save(user);
-        };
-    }
 }
