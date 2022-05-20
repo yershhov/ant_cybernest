@@ -554,7 +554,7 @@ hr {
 }
 
 .profile_content {
-    height: 100vh;
+    height: auto;
 }
 .t1row {
     display: flex;
@@ -564,12 +564,12 @@ hr {
     text-align: center;
     font-size: 5rem;
     font-weight: 100;
+    letter-spacing: 0.2rem;
 }
 .table1{
-    background-color: aliceblue;
     padding: 5rem;
     width: 70%;
-    margin: 0 10rem 0 10rem;
+    margin: 0 10rem 5rem 10rem;
     border-radius: 15px;
     background-color: rgba(19, 19, 19, 0.859);
     line-height: 2.5rem;
@@ -583,4 +583,45 @@ hr {
     position: absolute;
     left: 62rem;
     top: 21rem;
+}
+.t1_property{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.t1_val{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+.table2 {
+    padding: 5rem;
+    width: 70%;
+    margin: 0 10rem 5rem 10rem;
+    border-radius: 15px;
+    background-color: rgba(19, 19, 19, 0.859);
+    line-height: 2.5rem;
+}
+.order_history{
+    margin: 5rem auto 5rem auto;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100;
+    letter-spacing: 0.2rem;
+}
+.properties_row {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    display: flex;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+
+}
+.val_row {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+.citten {
+    width: 20rem;
+    margin: 3rem auto 4rem auto;
 }
