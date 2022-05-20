@@ -33,22 +33,16 @@ public class User {
             columnDefinition = "TEXT")
     private String phone;
 
-    @Column(nullable = false,
-            columnDefinition = "TEXT")
-    private String experience;
-
     @Column(nullable = false)
     private Boolean registered;
 
     public User(String fullName,
                 String email,
                 String phone,
-                String experience,
                 Boolean registered) {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-        this.experience = experience;
         this.registered = registered;
     }
 
@@ -88,14 +82,6 @@ public class User {
         this.phone = phone;
     }
 
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
     public Boolean getRegistered() {
         return registered;
     }
@@ -111,7 +97,6 @@ public class User {
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", experience='" + experience + '\'' +
                 ", registered=" + registered +
                 '}';
     }

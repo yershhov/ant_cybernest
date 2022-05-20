@@ -1,27 +1,27 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
 public class Order {
-    private User user;
+    private Integer userId;
     private String game;
-    private Integer additionalPractice;
+    private Integer orderId;
 
     public Order() {
     }
 
-    public Integer getAdditionalPractice() {
-        return additionalPractice;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setAdditionalPractice(Integer additionalPractice) {
-        this.additionalPractice = additionalPractice;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
     public String getGame() {
