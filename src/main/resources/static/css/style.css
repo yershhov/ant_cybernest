@@ -425,6 +425,9 @@ hr {
     width: 20rem;
     background-color: #222;
 }
+.apply_btn:hover{
+    cursor: pointer;
+}
 .dota_img {
     height: 20rem;
     width: 20rem;
