@@ -421,23 +421,29 @@ hr {
 .apply_btn {
     border: none;
     border-radius: 20px;
-    height: 20rem;
-    width: 20rem;
+    min-height: 20rem;
+    min-width: 20rem;
     background-color: #222;
+    
 }
 .apply_btn:hover{
     cursor: pointer;
+    height: 22rem;
+    width: 22rem;
+    
 }
 .dota_img {
     height: 20rem;
     width: 20rem;
     border-radius: 20px;
 }
+
 .csgo_img {
     height: 20rem;
     width: 20rem;
     border-radius: 20px;
 }
+
 
 .apply :hover {
     color: #FFFF;
