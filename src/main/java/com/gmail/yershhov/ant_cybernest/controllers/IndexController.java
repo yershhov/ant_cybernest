@@ -1,6 +1,4 @@
 package com.gmail.yershhov.ant_cybernest.controllers;
-
-import com.gmail.yershhov.ant_cybernest.dao.OrderDAO;
 import com.gmail.yershhov.ant_cybernest.dao.UserRepository;
 import com.gmail.yershhov.ant_cybernest.entities.CsOrder;
 import com.gmail.yershhov.ant_cybernest.entities.DotaOrder;
@@ -18,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
     private final UserRepository userRepository;
 
-    public IndexController(OrderDAO orderDAO) {
+    public IndexController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
