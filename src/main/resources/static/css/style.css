@@ -12,6 +12,7 @@
 body {
     color: #FFFF;
     width: 100%;
+    line-weight: 0;
 }
 
 div {
@@ -20,15 +21,15 @@ div {
     /* border: #FFFF solid 1px; */
 }
 
-.wrapper {
+.wrapper_css {
     height: auto;
     background-color: #222;
     display: flex;
     flex-direction: column;
 }
 
-.header {
-    width: 100%;
+.header_css {
+    width: 100vw;
     height: 11vh;
     position: fixed;
     z-index: 2;
@@ -83,6 +84,7 @@ div {
 }
 
 img {
+    vertical-align: 0;
     width: 100%;
     height: 100%;
 
@@ -112,7 +114,7 @@ a:hover {
     color: rgb(74, 74, 74);
 }
 
-.container {
+.container_css {
     margin-top: 11vh;
     display: flex;
     flex-direction: column;
@@ -120,13 +122,13 @@ a:hover {
     background-color: #222;
 }
 
-.main {
+.main_css {
     flex: auto;
     display: flex;
     flex-direction: column;
 }
 
-.footer {
+.footer_css {
     /* flex-basis: 25vh; */
     background-color: rgb(24, 24, 24);
     display: flex;
@@ -187,10 +189,12 @@ a:hover {
 .first_scroll {
     height: 88vh;
     /* border: #FFFF solid 1px; */
-    width: 100%;
     display: flex;
     align-content: center;
 
+}
+.first_scroll, .sec_scroll, .third_scroll, .fourth_scroll, .fifth_scroll, .footer_css {
+    width: 100vw;
 }
 
 .vid {
@@ -311,15 +315,22 @@ hr {
 
 .review_body {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: center;
+    text-align: center;
+    
 
+}
+.carousel-item {
+    text-align: center;
+    
 }
 
 .cadian,
 .zxcursed,
 .nata {
     width: 45vh;
-    margin-left: 4%;
+    margin: 0 auto 0 auto;
 
     text-align: center;
 
@@ -333,7 +344,7 @@ hr {
 }
 
 .nata {
-    margin-right: 4%;
+    /* margin-right: 4%; */
 }
 
 .join_us {
@@ -660,4 +671,8 @@ hr {
 .dancin{
     display: flex;
     flex-flow: row wrap;
+}
+div.container {
+    --bs-gutter-x: 0;
+    margin: 0;
 }
