@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<form th:action="@{/register}" th:method="POST">
+    <div><input type="text" class="inp" th:field="*{user.fullName}" placeholder="Full Name"></div>
+    <div style ="color:red" th:if="${#fields.hasErrors('user.fullName')}" th:errors="*{user.fullName}"></div>
+    <div><input type="text" class="inp" th:field="*{user.email}" placeholder="Email"></div>
+    <div style ="color:red" th:if="${#fields.hasErrors('user.email')}" th:errors="*{user.email}"></div>
+    <div><input type="text" class="inp" th:field="*{user.password}" placeholder="Password"></div>
+    <div style ="color:red" th:if="${#fields.hasErrors('user.password')}" th:errors="*{user.password}"></div>
+    <div><input type="text" class="inp" th:field="*{user.phone}" placeholder="Phone"></div>
+    <div style ="color:red" th:if="${#fields.hasErrors('user.phone')}" th:errors="*{user.phone}"></div>
+    <div><input type="submit" value="Sign Up"></div>
+</form>
+</body>
+</html>

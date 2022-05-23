@@ -1,11 +1,19 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
+import com.gmail.yershhov.ant_cybernest.validators.constraints.EmailConstraint;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity(name = "app_user")
 @Table(name = "app_user", uniqueConstraints = {
         @UniqueConstraint(name = "app_user_email_unique", columnNames = "email")
 })
+@Getter
+@Setter
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -27,6 +35,7 @@ public class User {
 
     @Column(nullable = false,
             columnDefinition = "TEXT")
+    @EmailConstraint
     private String email;
 
     @Column(nullable = false,
@@ -35,6 +44,8 @@ public class User {
 
     @Column(nullable = false)
     private Boolean registered;
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String password;
 
     public User(String fullName,
                 String email,
@@ -46,50 +57,6 @@ public class User {
         this.registered = registered;
     }
 
-    public User() {
-
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public Boolean getRegistered() {
-        return registered;
-    }
-
-    public void setRegistered(Boolean registered) {
-        this.registered = registered;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -98,6 +65,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", registered=" + registered +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

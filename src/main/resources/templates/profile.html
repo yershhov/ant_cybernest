@@ -10,24 +10,23 @@
     <!-- <link rel="shortcut icon" type="image/x-icon" href="icons/besticonever_reverse_icon.png"/> -->
 
     <!-- for index -->
-    <link rel="stylesheet" href="../static/css/style.css">
+<!--    <link rel="stylesheet" href="../static/css/style.css">-->
 
     <!-- for java -->
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+     <link rel="stylesheet" href="/css/style.css">
     <meta charset="UTF-8">
 </head>
 
 <body>
 <div class="wrapper_css">
     <div class="header_css">
-        <div class="icon"><a href="index.html"><img src="../static/icons/besticonever_reverse.png" alt="ant"id="ant_icon">                    </a></div>
-        <!-- <div class="icon"><a href="index.htmk"><img src="/icons/besticonever_reverse.png" alt="ant" id="ant_icon"></a></div> -->
+<!--        <div class="icon"><a href="index.html"><img src="../static/icons/besticonever_reverse.png" alt="ant"id="ant_icon">                    </a></div>-->
+        <div class="icon"><a href="/home#main"><img src="/icons/besticonever_reverse.png" alt="ant" id="ant_icon"></a></div>
 
         <div class="items" id="item1"><a href="index.html">Customers</a></div>
         <div class="items"><a href="index.html">Training</a></div>
         <div class="items item_right"><a href="index.html">Order</a></div>
-        <div class="user_icon_div"><a href="profile.html"><img class="user_icon" src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s" alt="user_pic"></a></div>
-        <!-- <div class="icon"><a href="profile.html"><img src="/icons/profile3.png" alt="profile" id="profile_icon"></a></div> -->
+        <div class="user_icon_div"><a href="/profile"><img class="user_icon" src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s" alt="user_pic"></a></div>
 
     </div>
     <div class="container_css profile_container">
@@ -37,16 +36,17 @@
                 <div class="table1">
                     <div class="edit"><a href=""><img class="edit_img" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt=""></a></div>
                     <div class="t1row">
-                        <div class="t1_property">Userame:</div>
-                        <div class="t1_value">Luxxxx</div>
+
+                        <div class="t1_property">Full Name:</div>
+                        <div class="t1_value" th:text="${loggedInUser.getFullName()}"></div>
                     </div>
                     <div class="t1row">
                         <div class="t1_property">Email:</div>
-                        <div class="t1_value">defaultemail@gmail.com</div>
+                        <div class="t1_value" th:text="${loggedInUser.getEmail()}"></div>
                     </div>
                     <div class="t1row">
                         <div class="t1_property">Phone number:</div>
-                        <div class="t1_value"> (+38)0938784808</div>
+                        <div class="t1_value" th:text="${loggedInUser.getPhone()}"></div>
                     </div>
                 </div>
                 <hr>

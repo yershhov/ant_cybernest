@@ -7,11 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Order {
-    private Integer userId;
-    private String game;
-    private Integer orderId;
-    private String userExperience;
+public class UserToLogin {
+    private String email;
+    private String password;
 }
-
-
