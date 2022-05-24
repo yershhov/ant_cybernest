@@ -4,10 +4,13 @@ import com.gmail.yershhov.ant_cybernest.repositories.UserRepository;
 import com.gmail.yershhov.ant_cybernest.entities.UserToLogin;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping()
@@ -17,16 +20,16 @@ public class LoginController {
     public LoginController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    @GetMapping("/login")
+    @GetMapping()
     public String login(Model model){
         model.addAttribute("userToLogin", new UserToLogin());
         return "login";
     }
     @PostMapping("/log")
-    public String log(@ModelAttribute("userToLogin") UserToLogin userToLogin){
-        if(userRepository.findByEmail(userToLogin.getEmail()).size() == 0){
-            System.out.println("No user with such email found");
-            return "redirect:/registration";
+    public String log(@ModelAttribute("userToLogin") @Valid UserToLogin userToLogin,
+                      BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "login";
         }
         ProfileController.setLoggedInUser(userRepository.findByEmail(userToLogin.getEmail()).get(0));
         return "redirect:/profile";

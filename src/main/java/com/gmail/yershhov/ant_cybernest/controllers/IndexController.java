@@ -2,6 +2,7 @@ package com.gmail.yershhov.ant_cybernest.controllers;
 import com.gmail.yershhov.ant_cybernest.entities.CsOrder;
 import com.gmail.yershhov.ant_cybernest.entities.DotaOrder;
 import com.gmail.yershhov.ant_cybernest.entities.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class IndexController {
+
     @GetMapping("/home")
     public String index(Model model1, Model model2, Model model3) {
         model1.addAttribute("csorder", new CsOrder());

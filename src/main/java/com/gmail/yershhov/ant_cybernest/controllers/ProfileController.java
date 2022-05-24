@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping()
 public class ProfileController {
-    private static User loggedInUser;
+    private static User loggedInUser = null;
     @GetMapping("/profile")
     public String profile(Model model){
         model.addAttribute("loggedInUser", loggedInUser);

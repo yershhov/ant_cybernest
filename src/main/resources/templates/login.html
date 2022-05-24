@@ -7,7 +7,9 @@
 <body>
 <form th:action="@{/log}" th:method="POST">
 <input type="text" class="inp" th:field="*{userToLogin.email}" placeholder="Email">
+<div style ="color:red" th:if="${#fields.hasErrors('userToLogin.email')}" th:errors="*{userToLogin.email}"></div>
 <input type="text" class="inp" th:field="*{userToLogin.password}" placeholder="Password">
+<div style ="color:red" th:if="${#fields.hasErrors('userToLogin.password')}" th:errors="*{userToLogin.password}"></div>
 <input type="submit" value="Sign In">
 </form>
 <a href="/registration">Register</a>

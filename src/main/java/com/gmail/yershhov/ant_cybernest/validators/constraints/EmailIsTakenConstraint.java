@@ -1,6 +1,6 @@
 package com.gmail.yershhov.ant_cybernest.validators.constraints;
 
-import com.gmail.yershhov.ant_cybernest.validators.EmailValidator;
+import com.gmail.yershhov.ant_cybernest.validators.EmailIsTakenValidator;
 
 
 import javax.validation.Constraint;
@@ -16,8 +16,8 @@ import static java.lang.annotation.ElementType.PARAMETER;
 @Target( { FIELD, PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Constraint(validatedBy = EmailValidator.class)
-public @interface EmailConstraint {
+@Constraint(validatedBy = EmailIsTakenValidator.class)
+public @interface EmailIsTakenConstraint {
     //error message
     public String message() default "User with such email already exists";
     //represents group of constraints

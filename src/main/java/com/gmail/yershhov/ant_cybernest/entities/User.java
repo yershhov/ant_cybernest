@@ -1,6 +1,6 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
-import com.gmail.yershhov.ant_cybernest.validators.constraints.EmailConstraint;
+import com.gmail.yershhov.ant_cybernest.validators.constraints.EmailIsTakenConstraint;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,15 +35,13 @@ public class User {
 
     @Column(nullable = false,
             columnDefinition = "TEXT")
-    @EmailConstraint
+    @EmailIsTakenConstraint
     private String email;
 
     @Column(nullable = false,
             columnDefinition = "TEXT")
     private String phone;
 
-    @Column(nullable = false)
-    private Boolean registered;
     @Column(nullable = false, columnDefinition = "TEXT")
     private String password;
 
@@ -54,18 +52,5 @@ public class User {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-        this.registered = registered;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", registered=" + registered +
-                ", password='" + password + '\'' +
-                '}';
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.security.NoSuchAlgorithmException;
 
 @Controller
 @RequestMapping
@@ -27,11 +28,12 @@ public class RegistrationController {
         return "registration";
     }
     @PostMapping("/register")
-    public String register(@ModelAttribute @Valid User user,
-                           BindingResult bindingResult){
+    public String register(@ModelAttribute("user") @Valid User user,
+                           BindingResult bindingResult) throws NoSuchAlgorithmException {
         if(bindingResult.hasErrors()){
             return "registration";
         }
+        user.setPassword(EncryptionController.encrypt(user.getPassword()));
         userRepository.save(user);
         return "redirect:/home";
     }

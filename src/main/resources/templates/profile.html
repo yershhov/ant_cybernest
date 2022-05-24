@@ -27,7 +27,7 @@
         <div class="items"><a href="index.html">Training</a></div>
         <div class="items item_right"><a href="index.html">Order</a></div>
         <div class="user_icon_div"><a href="/profile"><img class="user_icon" src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s" alt="user_pic"></a></div>
-
+        <div th:if="${loggedInUser == null}" class="user_icon_div"><a href="/login"><img class="user_icon" src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s" alt="user_pic"></a></div>
     </div>
     <div class="container_css profile_container">
         <div class="main">
@@ -36,17 +36,16 @@
                 <div class="table1">
                     <div class="edit"><a href=""><img class="edit_img" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt=""></a></div>
                     <div class="t1row">
-
                         <div class="t1_property">Full Name:</div>
-                        <div class="t1_value" th:text="${loggedInUser.getFullName()}"></div>
+                        <div th:if="${loggedInUser != null}" class="t1_value" th:text="${loggedInUser.getFullName()}"></div>
                     </div>
                     <div class="t1row">
                         <div class="t1_property">Email:</div>
-                        <div class="t1_value" th:text="${loggedInUser.getEmail()}"></div>
+                        <div th:if="${loggedInUser != null}" class="t1_value" th:text="${loggedInUser.getEmail()}"></div>
                     </div>
                     <div class="t1row">
                         <div class="t1_property">Phone number:</div>
-                        <div class="t1_value" th:text="${loggedInUser.getPhone()}"></div>
+                        <div th:if="${loggedInUser != null}" class="t1_value" th:text="${loggedInUser.getPhone()}"></div>
                     </div>
                 </div>
                 <hr>
