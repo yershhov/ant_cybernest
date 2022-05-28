@@ -1,6 +1,7 @@
 package com.gmail.yershhov.ant_cybernest.validators.constraints;
 
-import com.gmail.yershhov.ant_cybernest.validators.PasswordValidator;
+import com.gmail.yershhov.ant_cybernest.validators.EmailIsTakenValidator;
+import com.gmail.yershhov.ant_cybernest.validators.InvalidEmailOrPasswordValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -9,15 +10,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.ElementType.TYPE;
 
-@Target( { FIELD, PARAMETER, TYPE })
+@Target( { TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Constraint(validatedBy = PasswordValidator.class)
-public @interface PasswordConstraint {
+@Constraint(validatedBy = InvalidEmailOrPasswordValidator.class)
+public @interface InvalidEmailOrPasswordConstraint {
     //error message
-    public String message() default "Password's wrong";
+    public String message() default "Invalid email or password";
     //represents group of constraints
     public Class<?>[] groups() default {};
     //represents additional information about annotation
