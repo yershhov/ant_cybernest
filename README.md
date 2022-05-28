@@ -1,2 +1,2 @@
 # ant_cybernest
-Аниме для мужчин!
+S*x, dr*gs, rock'n'roll, healthy nutrition
