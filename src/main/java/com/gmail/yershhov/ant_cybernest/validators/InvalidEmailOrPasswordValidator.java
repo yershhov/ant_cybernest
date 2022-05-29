@@ -31,9 +31,9 @@ public class InvalidEmailOrPasswordValidator implements ConstraintValidator<Inva
             e.printStackTrace();
         }
         if(!isValid){
-            constraintValidatorContext.disableDefaultConstraintViolation();
-            constraintValidatorContext.buildConstraintViolationWithTemplate(constraintValidatorContext.getDefaultConstraintMessageTemplate())
-                    .addPropertyNode( "invalidEmailOrPassword" ).addConstraintViolation();
+//            constraintValidatorContext.disableDefaultConstraintViolation();
+//            constraintValidatorContext.buildConstraintViolationWithTemplate(constraintValidatorContext.getDefaultConstraintMessageTemplate())
+//                    .addPropertyNode( "invalidEmailOrPassword" ).addConstraintViolation();
             return false;
         }
 

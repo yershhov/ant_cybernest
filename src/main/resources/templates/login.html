@@ -6,7 +6,7 @@
 </head>
 <body>
 <form th:action="@{/log}" th:method="POST">
-<div style ="color:red" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}">></div>
+<!--<div style ="color:red" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}">></div>-->
 <input type="text" class="inp" th:field="*{userToLogin.email}" placeholder="Email">
 <input type="text" class="inp" th:field="*{userToLogin.password}" placeholder="Password">
 <input type="submit" value="Sign In">
