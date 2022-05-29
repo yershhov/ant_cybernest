@@ -1,8 +1,8 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
 public class DotaOrder extends Order{
-    String role;
-    String communication;
+    private String role;
+    private String communication;
 
 
     public String getRole() {

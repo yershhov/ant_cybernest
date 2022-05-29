@@ -1,9 +1,9 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
 public class CsOrder extends Order{
-    String winRate;
-    String bestMap;
-    String hoursPlayed;
+    private String winRate;
+    private String bestMap;
+    private String hoursPlayed;
 
     public String getBestMap() {
         return bestMap;
