@@ -612,7 +612,7 @@ hr {
 .table1{
     padding: 5rem;
     width: 70%;
-    margin: 0 10rem 5rem 10rem;
+    margin: 0 auto 5rem auto;
     border-radius: 15px;
     background-color: rgba(19, 19, 19, 0.859);
     line-height: 2.5rem;
@@ -639,7 +639,7 @@ hr {
 .table2 {
     padding: 5rem;
     width: 70%;
-    margin: 0 10rem 5rem 10rem;
+    margin: 0 auto 5rem auto;
     border-radius: 15px;
     background-color: rgba(19, 19, 19, 0.859);
     line-height: 2.5rem;
@@ -664,8 +664,10 @@ hr {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
 }
-.citten {
+.kitten {
     width: 20rem;
+    height: 20rem;
+    
     margin: 3rem auto 4rem auto;
 }
 .dancin{
