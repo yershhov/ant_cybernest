@@ -5,6 +5,7 @@ import com.gmail.yershhov.ant_cybernest.entities.UserToLogin;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +30,10 @@ public class LoginController {
     public String log(@ModelAttribute("userToLogin") @Valid UserToLogin userToLogin,
                       BindingResult bindingResult){
         if(bindingResult.hasErrors()){
+            userToLogin.setIsValid(false);
             return "login";
         }
+        userToLogin.setIsValid(true);
         ProfileController.setLoggedInUser(userRepository.findByEmail(userToLogin.getEmail()).get(0));
         return "redirect:/profile";
     }

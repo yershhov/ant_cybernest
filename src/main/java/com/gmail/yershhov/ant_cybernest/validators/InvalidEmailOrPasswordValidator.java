@@ -23,20 +23,13 @@ public class InvalidEmailOrPasswordValidator implements ConstraintValidator<Inva
         if(user.size() == 0){
             return false;
         }
-
-        boolean isValid = false;
         try {
-            isValid = EncryptionController.encrypt(userToLogin.getPassword()).equals(user.get(0).getPassword());
+            if(!EncryptionController.encrypt(userToLogin.getPassword()).equals(user.get(0).getPassword())){
+                return false;
+            }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        if(!isValid){
-//            constraintValidatorContext.disableDefaultConstraintViolation();
-//            constraintValidatorContext.buildConstraintViolationWithTemplate(constraintValidatorContext.getDefaultConstraintMessageTemplate())
-//                    .addPropertyNode( "invalidEmailOrPassword" ).addConstraintViolation();
-            return false;
-        }
-
         return true;
     }
 }

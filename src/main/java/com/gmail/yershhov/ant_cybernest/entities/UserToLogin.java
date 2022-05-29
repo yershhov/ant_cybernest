@@ -12,4 +12,5 @@ public class UserToLogin {
 
     private String email;
     private String password;
+    private Boolean isValid;
 }
