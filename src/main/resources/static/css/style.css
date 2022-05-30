@@ -13,6 +13,7 @@ body {
     color: #FFFF;
     width: 100%;
     line-weight: 0;
+    background-color: #222;
 }
 
 div {
@@ -739,7 +740,7 @@ div.container {
     align-items: center;
     color: rgba(255, 255, 255, 0.753);
 }
-.login_title {
+.login_title, .reg_title{
     text-align: center;
 }
 .login_form{
@@ -791,6 +792,74 @@ div.container {
 }
 @media (max-width: 950px){
     .login_form {
+        width: 75%;
+    }
+    .reg_form {
+        width: 75%;
+    }
+}
+.reg_wrapper {
+    height: 100vh;
+    background-color: #222;
+    padding: 2% 5%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.reg_icon {
+    height: 5rem;
+    width: 5rem;
+}
+.reg_icon_class{
+    text-align: center;
+    margin-bottom: 2%;
+}
+.reg_form {
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.225);
+    border-radius: 15px;
+    padding: 2%;
+    width: 50%;
+}
+.inside_reg_form {
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+.row_inp {
+    margin-bottom: 1%;
+    padding: 2%;
+    text-align: left;
+    border: 2px solid rgb(54, 54, 54);
+    border-radius: 10px;
+    background-color: #222;
+    color: rgb(204, 204, 204);
+    height: 7vh;    
+    width: 15rem;
+    
+}
+.reg_emptiness {
+    height: 2rem;
+}
+.reg_row_el {
+    /* height: 7rem; */
+}
+.reg_subm {
+    padding: 2% 4%;
+    border-radius: 7px;
+    border: none;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.753);
+    
+}
+.reg_subm:hover {
+    background-color: rgb(79, 79, 79);
+    color: rgba(255, 255, 255, 0.753);   
+}
+@media (max-width: 950px){
+    .reg_form {
         width: 75%;
     }
 }

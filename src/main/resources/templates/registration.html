@@ -2,19 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registration</title>
+        <title>Registration</title>
+
+        <!-- vscode -->
+        <link rel="shortcut icon" type="image/x-icon" href="../static/icons/besticonever_reverse_icon.png" />
+        <link rel="stylesheet" href="../static/css/style.css">
+
+        <!-- intellij -->
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="icons/besticonever_reverse_icon.png"/> -->
+        <!-- <link rel="stylesheet" href="/css/style.css"> -->
 </head>
-<body>
-<form th:action="@{/register}" th:method="POST">
-    <div><input type="text" class="inp" th:field="*{user.fullName}" placeholder="Full Name"></div>
-    <div style ="color:red" th:if="${#fields.hasErrors('user.fullName')}" th:errors="*{user.fullName}"></div>
-    <div><input type="text" class="inp" th:field="*{user.email}" placeholder="Email"></div>
-    <div style ="color:red" th:if="${#fields.hasErrors('user.email')}" th:errors="*{user.email}"></div>
-    <div><input type="text" class="inp" th:field="*{user.password}" placeholder="Password"></div>
-    <div style ="color:red" th:if="${#fields.hasErrors('user.password')}" th:errors="*{user.password}"></div>
-    <div><input type="text" class="inp" th:field="*{user.phone}" placeholder="Phone"></div>
-    <div style ="color:red" th:if="${#fields.hasErrors('user.phone')}" th:errors="*{user.phone}"></div>
-    <div><input type="submit" value="Sign Up"></div>
-</form>
-</body>
+    <body>
+        <div class="reg_wrapper">            
+            <div class="reg_icon_class"><img class="reg_icon" src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s" alt="user_pic"></div>        
+            <div class="reg_form">
+                <form th:action="@{/register}" th:method="POST">
+                    <div class="inside_reg_form">
+                        <div class="reg_row_el"><input type="text" class="inp row_inp" th:field="*{user.fullName}" placeholder="Full Name"></div>
+                        <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.fullName')}" th:errors="*{user.fullName}"></div>
+                        <div class="reg_row_el" ><input type="text" class="inp row_inp" th:field="*{user.email}" placeholder="Email"></div>
+                        <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.email')}" th:errors="*{user.email}"></div>                        
+                        <div class="reg_row_el" ><input type="text" class="inp row_inp" th:field="*{user.password}" placeholder="Password"></div>
+                        <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.password')}" th:errors="*{user.password}"></div>
+                        <div class="reg_row_el" ><input type="text" class="inp row_inp" th:field="*{user.phone}" placeholder="Phone"></div>
+                        <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.phone')}" th:errors="*{user.phone}"></div>
+                        <div class="" ><input class="reg_subm" type="submit" value="Sign Up"></div>                        
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+
+    </body>
 </html>

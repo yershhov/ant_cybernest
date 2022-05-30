@@ -29,8 +29,8 @@
                     <div class="form_text">Enter your email and password</div>                    
                     <input type="text" class="inp" th:field="*{userToLogin.email}" placeholder="Email">
                     <input type="text" class="inp" th:field="*{userToLogin.password}" placeholder="Password">
-                    <!-- <div class="unvisible_zatychka"></div> -->
-                    <div class="login_error" style ="color:red" th:if="${userToLogin.getIsValid() == false}">Invalid email or password</div>
+                    
+                    <div class="login_error" style ="color:red" th:if="${userToLogin.getIsValid() == false}"></div>
                     <input class="login_sign_in" type="submit" value="Sign In">
                     
                 </form>
