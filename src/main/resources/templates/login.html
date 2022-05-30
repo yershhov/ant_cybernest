@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-<form th:action="@{/log}" th:method="POST">
-<div style ="color:red" th:if="${userToLogin.getIsValid() == false}">Invalid email or password</div>
-<input type="text" class="inp" th:field="*{userToLogin.email}" placeholder="Email">
-<input type="text" class="inp" th:field="*{userToLogin.password}" placeholder="Password">
-<input type="submit" value="Sign In">
-</form>
-<a href="/registration">Sign Up</a>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+
+        <!-- vscode -->
+        <link rel="shortcut icon" type="image/x-icon" href="../static/icons/besticonever_reverse_icon.png" />
+        <link rel="stylesheet" href="../static/css/style.css">
+
+        <!-- intellij -->
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="icons/besticonever_reverse_icon.png"/> -->
+        <!-- <link rel="stylesheet" href="/css/style.css"> -->
+
+        
+    </head>
+    <body class="login_body">
+        <div class="login_wrapper">
+            <div class="login_title">
+                ANT_Cybernest
+            </div>
+            <div class="login_form">
+                <div class="login_form_header">
+                    <div class="login_icon"><img class="login_user_icon" src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s" alt="user_pic"></div>
+                    <div class="login_header_text">welcome back, troop</div>
+                    
+                </div>
+                <form th:action="@{/log}" th:method="POST">
+                    <div class="form_text">Enter your email and password</div>                    
+                    <input type="text" class="inp" th:field="*{userToLogin.email}" placeholder="Email">
+                    <input type="text" class="inp" th:field="*{userToLogin.password}" placeholder="Password">
+                    <!-- <div class="unvisible_zatychka"></div> -->
+                    <div class="login_error" style ="color:red" th:if="${userToLogin.getIsValid() == false}">Invalid email or password</div>
+                    <input class="login_sign_in" type="submit" value="Sign In">
+                    
+                </form>
+                <div class="login_signup"></div>
+                <a class="login_reg" href="/registration">Sign Up</a>
+            </div>
+            
+        </div>
+        
+    </body>
 </html>

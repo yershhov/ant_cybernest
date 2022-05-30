@@ -618,14 +618,14 @@ hr {
     line-height: 2.5rem;
 }
 .edit_img {
-    height: 2rem;
-    width: 2rem;
+    /* height: 2rem;
+    width: 2rem; */
 }
 .edit_img{
-    display: inline-block;
+    /* display: inline-block;
     position: absolute;
-    left: 62rem;
-    top: 21rem;
+    left: 25%;
+    top: 25%; */
 }
 .t1_property{
     font-family: Arial, Helvetica, sans-serif;
@@ -707,14 +707,14 @@ hr {
     flex: 0 1 35rem;
 }
 .kitten {
-    width: 20rem;
-    height: 20rem;
-    
-    margin: 3rem auto 4rem auto;
+    width: 15rem;
+    height: 15rem;
+    margin: 3rem 1rem;
 }
 .dancin{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 }
 div.container {
     --bs-gutter-x: 0;
@@ -724,4 +724,73 @@ div.container {
     width: 85%;
     border-color: rgba(143, 143, 143, 0.313);
     
+}
+.login_body {
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+}
+.login_wrapper {
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;;
+    /* justify-content:center; */
+    align-items: center;
+    color: rgba(255, 255, 255, 0.753);
+}
+.login_title {
+    text-align: center;
+}
+.login_form{
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.225);
+    border-radius: 15px;
+    width: 50%;
+    margin-top: 3%;
+    padding: 2% 3%;
+    line-height: 2;    
+}
+.login_user_icon {
+    height: 5rem;
+    width: 5rem;
+}
+.login_header_text {
+    color: rgba(255, 255, 255, 0.454);
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    
+}
+.form_text {
+    margin-bottom: 1%;
+}
+.login_sign_in {
+    padding: 2% 4%;
+    border-radius: 7px;
+    border: none;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.753);
+    margin: 2% 0;
+}
+.login_sign_in:hover {
+    background-color: rgb(79, 79, 79);
+    color: rgba(255, 255, 255, 0.753); 
+}
+.login_reg {
+    font-size: 0.8rem;
+}
+.login_title {
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+.login_error {
+    height: 2rem;
+}
+.unvisible_zatychka {
+    height: 2rem;
+}
+@media (max-width: 950px){
+    .login_form {
+        width: 75%;
+    }
 }
