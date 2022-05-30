@@ -786,6 +786,7 @@ div.container {
 }
 .login_error {
     height: 2rem;
+    color: #cc0000;
 }
 .unvisible_zatychka {
     height: 2rem;

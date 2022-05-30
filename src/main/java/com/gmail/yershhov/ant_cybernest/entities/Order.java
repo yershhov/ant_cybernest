@@ -9,17 +9,17 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+//@Entity
 public class Order {
-    @ManyToOne()
-    @JoinColumn(name = "user_id")
-    private User user;
-    @Id
-    @Column
+//    @ManyToOne()
+//    @JoinColumn(name = "user_id")
+//    private User user;
+//    @Id
+//    @Column
     private Integer orderId;
-    @Column
+//    @Column
     private String game;
-    @Column
+//    @Column
     private String userExperience;
 }
 

@@ -12,6 +12,9 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class DotaOrder extends Order {
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     @Id
     @GeneratedValue
     private Integer orderId;
