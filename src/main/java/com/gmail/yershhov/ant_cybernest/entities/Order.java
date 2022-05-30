@@ -11,20 +11,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 public class Order {
+    @ManyToOne()
+    @JoinColumn(name = "user_id")
+    private User user;
     @Id
-    @SequenceGenerator(
-            name = "order_sequence",
-            sequenceName = "order_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "order_sequence"
-    )
+    @Column
     private Integer orderId;
-
-    private Integer userId;
+    @Column
     private String game;
+    @Column
     private String userExperience;
 }
 

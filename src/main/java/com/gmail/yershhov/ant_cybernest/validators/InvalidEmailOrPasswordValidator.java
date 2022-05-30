@@ -1,6 +1,6 @@
 package com.gmail.yershhov.ant_cybernest.validators;
 
-import com.gmail.yershhov.ant_cybernest.controllers.EncryptionController;
+import com.gmail.yershhov.ant_cybernest.controllers.Encryptor;
 import com.gmail.yershhov.ant_cybernest.entities.User;
 import com.gmail.yershhov.ant_cybernest.entities.UserToLogin;
 import com.gmail.yershhov.ant_cybernest.repositories.UserRepository;
@@ -24,7 +24,7 @@ public class InvalidEmailOrPasswordValidator implements ConstraintValidator<Inva
             return false;
         }
         try {
-            if(!EncryptionController.encrypt(userToLogin.getPassword()).equals(user.get(0).getPassword())){
+            if(!Encryptor.encrypt(userToLogin.getPassword()).equals(user.get(0).getPassword())){
                 return false;
             }
         } catch (NoSuchAlgorithmException e) {

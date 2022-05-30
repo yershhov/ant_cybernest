@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "app_user")
 @Table(name = "app_user", uniqueConstraints = {
@@ -27,7 +28,10 @@ public class User {
             generator = "app_user_sequence"
     )
     @Column(updatable = false)
-    private Integer id;
+    private Integer userId;
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
     @Column(nullable = false,
             columnDefinition = "TEXT")
@@ -45,12 +49,4 @@ public class User {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String password;
 
-    public User(String fullName,
-                String email,
-                String phone,
-                Boolean registered) {
-        this.fullName = fullName;
-        this.email = email;
-        this.phone = phone;
-    }
 }

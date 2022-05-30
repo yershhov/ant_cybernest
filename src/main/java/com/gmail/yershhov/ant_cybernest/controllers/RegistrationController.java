@@ -33,7 +33,7 @@ public class RegistrationController {
         if(bindingResult.hasErrors()){
             return "registration";
         }
-        user.setPassword(EncryptionController.encrypt(user.getPassword()));
+        user.setPassword(Encryptor.encrypt(user.getPassword()));
         userRepository.save(user);
         return "redirect:/home";
     }
