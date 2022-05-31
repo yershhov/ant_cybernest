@@ -11,18 +11,28 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class DotaOrder extends Order {
+public class DotaOrder{
+    @Id
+    @SequenceGenerator(
+            name = "order_sequence",
+            sequenceName = "order_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "order_sequence"
+    )
+    private Integer orderId;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    @Id
-    @GeneratedValue
-    private Integer orderId;
+    @Column
+    private String game;
+    @Column
+    private String userExperience;
     @Column
     private String role;
     @Column
     private String communication;
-
-
 }
 

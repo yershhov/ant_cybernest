@@ -31,7 +31,9 @@ public class User {
     private Integer userId;
 
     @OneToMany(mappedBy = "user")
-    private List<DotaOrder> orders;
+    private List<DotaOrder> dotaOrders;
+    @OneToMany(mappedBy = "user")
+    private List<CsOrder> csOrders;
 
     @Column(nullable = false,
             columnDefinition = "TEXT")

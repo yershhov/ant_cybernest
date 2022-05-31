@@ -1,31 +1,38 @@
 package com.gmail.yershhov.ant_cybernest.entities;
 
-public class CsOrder extends Order{
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity(name = "cs_order")
+@Table(name = "cs_order")
+public class CsOrder {
+    @Id
+    @SequenceGenerator(
+            name = "order_sequence",
+            sequenceName = "order_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "order_sequence"
+    )
+    private Integer orderId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    @Column
+    private String game;
+    @Column
+    private String userExperience;
+    @Column
     private String winRate;
+    @Column
     private String bestMap;
+    @Column
     private String hoursPlayed;
-
-    public String getBestMap() {
-        return bestMap;
-    }
-
-    public String getHoursPlayed() {
-        return hoursPlayed;
-    }
-
-    public void setHoursPlayed(String hoursPlayed) {
-        this.hoursPlayed = hoursPlayed;
-    }
-
-    public String getWinRate() {
-        return winRate;
-    }
-
-    public void setWinRate(String winRate) {
-        this.winRate = winRate;
-    }
-
-    public void setBestMap(String bestMap) {
-        this.bestMap = bestMap;
-    }
 }
