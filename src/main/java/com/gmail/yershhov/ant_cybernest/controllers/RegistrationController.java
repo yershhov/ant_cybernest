@@ -35,7 +35,7 @@ public class RegistrationController {
         }
         user.setPassword(Encryptor.encrypt(user.getPassword()));
         userRepository.save(user);
-        return "redirect:/home";
+        return "redirect:";
     }
 
 }

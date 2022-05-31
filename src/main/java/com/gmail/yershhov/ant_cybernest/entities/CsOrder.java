@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity(name = "cs_order")
 @Table(name = "cs_order")
-public class CsOrder {
+public class CsOrder implements Comparable<CsOrder>{
     @Id
     @SequenceGenerator(
             name = "order_sequence",
@@ -35,4 +35,9 @@ public class CsOrder {
     private String bestMap;
     @Column
     private String hoursPlayed;
+
+    @Override
+    public int compareTo(CsOrder o) {
+        return this.orderId - o.orderId;
+    }
 }

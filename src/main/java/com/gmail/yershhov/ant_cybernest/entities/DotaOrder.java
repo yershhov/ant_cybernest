@@ -5,13 +5,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity(name = "dota_order")
 @Table(name = "dota_order")
 @Getter
 @Setter
 @NoArgsConstructor
-public class DotaOrder{
+public class DotaOrder implements Comparable<DotaOrder>{
     @Id
     @SequenceGenerator(
             name = "order_sequence",
@@ -34,5 +35,10 @@ public class DotaOrder{
     private String role;
     @Column
     private String communication;
+
+    @Override
+    public int compareTo(DotaOrder o) {
+        return this.orderId - o.orderId;
+    }
 }
 

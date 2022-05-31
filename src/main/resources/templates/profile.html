@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>ant</title>
@@ -49,50 +50,61 @@
                 </div>
                 <hr>
                 <div class="order_history" id="history_anchor"><span class="order_history_text">Order History</span></div>
-                <div class="table2">
 
-                    <div class="val_row">
-                        <div class="order_id"><strong>01</strong></div>
-                        <div class="game_name"><strong>CS:GO</strong></div>
-                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>
-                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>
-                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>
-                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>
+                <div class="table2">
+                    <div th:each="dotaOrder : ${dotaOrders}">
+                        <div class="val_row">
+                            <div class="order_id"><strong th:text="${dotaOrder.orderId}"></strong></div>
+                            <div class="game_name"><strong th:text="${dotaOrder.game}"></strong></div>
+                            <div class="current_mmr"><strong>PTS: </strong><span th:text="${dotaOrder.userExperience}"></span></div>
+                            <div class="role"><strong>Role: </strong><span th:text="${dotaOrder.role}"></span></div>
+                            <div class="win-rate_val"><strong>Comm. method: </strong><span th:text="${dotaOrder.communication}"></span></div>
+<!--                            <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
+                            <div class="edit_dota"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div>
+                        </div>
+                    </div>
+<!--                    <div class="val_row">-->
+<!--                        <div class="order_id"><strong>01</strong></div>-->
+<!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
+<!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
+<!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
+<!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
+<!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
+<!--&lt;!&ndash;                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>&ndash;&gt;-->
+<!--                         <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div>-->
+<!--                    </div>-->
+<!--                    <hr class="order_line">-->
+<!--                    <div class="val_row">-->
+<!--                        <div class="order_id"><strong>02</strong></div>-->
+<!--                        <div class="game_name"><strong>DOTA</strong></div>-->
+<!--                        <div class="current_mmr"><strong>PTS: </strong>745</div>-->
+<!--                        <div class="role"><strong>Role: </strong>Carry</div>-->
+<!--                        <div class="win-rate_val"><strong>Communication method: </strong>Discord</div>-->
+<!--                       <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
+<!--                        &lt;!&ndash; <div class="edit_dota"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <hr class="order_line">-->
+<!--                    <div class="val_row">-->
+<!--                        <div class="order_id"><strong>01</strong></div>-->
+<!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
+<!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
+<!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
+<!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
+<!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
 <!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-                         <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div>
-                    </div>
-                    <hr class="order_line">
-                    <div class="val_row">
-                        <div class="order_id"><strong>02</strong></div>
-                        <div class="game_name"><strong>DOTA</strong></div>
-                        <div class="current_mmr"><strong>PTS: </strong>745</div>
-                        <div class="role"><strong>Role: </strong>Carry</div>
-                        <div class="win-rate_val"><strong>Communication method: </strong>Discord</div>
-                       <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>
-                        <!-- <div class="edit_dota"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> -->
-                    </div>
-                    <hr class="order_line">
-                    <div class="val_row">
-                        <div class="order_id"><strong>01</strong></div>
-                        <div class="game_name"><strong>CS:GO</strong></div>
-                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>
-                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>
-                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>
-                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>
-                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>
-                        <!-- <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> -->
-                    </div>
-                    <hr class="order_line">
-                    <div class="val_row">
-                        <div class="order_id"><strong>01</strong></div>
-                        <div class="game_name"><strong>CS:GO</strong></div>
-                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>
-                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>
-                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>
-                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>
-                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>
-                        <!-- <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> -->
-                    </div>
+<!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <hr class="order_line">-->
+<!--                    <div class="val_row">-->
+<!--                        <div class="order_id"><strong>01</strong></div>-->
+<!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
+<!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
+<!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
+<!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
+<!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
+<!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
+<!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
+<!--                    </div>-->
 
 
 

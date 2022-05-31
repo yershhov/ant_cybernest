@@ -4,9 +4,16 @@ import com.gmail.yershhov.ant_cybernest.validators.constraints.EmailIsTakenConst
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 @Entity(name = "app_user")
 @Table(name = "app_user", uniqueConstraints = {
@@ -30,10 +37,13 @@ public class User {
     @Column(updatable = false)
     private Integer userId;
 
-    @OneToMany(mappedBy = "user")
-    private List<DotaOrder> dotaOrders;
-    @OneToMany(mappedBy = "user")
-    private List<CsOrder> csOrders;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<DotaOrder> dotaOrders = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<CsOrder> csOrders = new ArrayList<>();
 
     @Column(nullable = false,
             columnDefinition = "TEXT")
