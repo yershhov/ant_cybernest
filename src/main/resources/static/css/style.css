@@ -490,13 +490,14 @@ hr {
 .modal-content {
     background-color: #222;
     width: 50vw;
-    height: 60vh;
     margin: auto;
     margin-top: 10vh;
     z-index: 101;
     display: flex;
     align-items: center;
+    text-align: center;
     border-radius: 10px;
+    padding: 3%;
 }
 
 
@@ -512,11 +513,10 @@ hr {
 }
 
 .modal-body {
-   padding: 5%;
+    text-align: center;
 }
 
 .modal-footer {
-    padding-top: 5vh;
     background-color: red;
 }
 
@@ -563,9 +563,23 @@ hr {
     flex: 50%;
 }
 .column2 {
-    float: right;
+    /* float: right;
     width: 50%;
-    flex: 50%;
+    flex: 50%; */
+    text-align: center;
+
+}
+
+.modal_row {
+    
+}
+
+.modal_subm {
+    height: 3rem;
+    border: none;
+    border-radius: 0.45rem;
+    padding: 2% 5%;
+    
 }
 
 /* Clear floats after the columns */
@@ -585,6 +599,7 @@ hr {
 }
 .bestmap{
     /*Has to be centered in a cs form like a submit button(which I also did not manage to center myself haha)*/
+
 }
 .subm{
     width: 80%;
