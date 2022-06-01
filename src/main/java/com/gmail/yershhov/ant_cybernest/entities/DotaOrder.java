@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity(name = "dota_order")
 @Table(name = "dota_order")
@@ -23,7 +22,7 @@ public class DotaOrder implements Comparable<DotaOrder>{
             strategy = GenerationType.SEQUENCE,
             generator = "order_sequence"
     )
-    private Integer orderId;
+    private int orderId;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

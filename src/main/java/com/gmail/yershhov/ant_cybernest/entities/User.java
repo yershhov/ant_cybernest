@@ -12,8 +12,6 @@ import org.hibernate.annotations.LazyCollectionOption;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 @Entity(name = "app_user")
 @Table(name = "app_user", uniqueConstraints = {
@@ -37,11 +35,11 @@ public class User {
     @Column(updatable = false)
     private Integer userId;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL, mappedBy = "user")
     @Fetch(value = FetchMode.SUBSELECT)
     private List<DotaOrder> dotaOrders = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL, mappedBy = "user")
     @Fetch(value = FetchMode.SUBSELECT)
     private List<CsOrder> csOrders = new ArrayList<>();
 

@@ -1,6 +1,7 @@
 package com.gmail.yershhov.ant_cybernest.repositories;
 
 import com.gmail.yershhov.ant_cybernest.entities.DotaOrder;
+import com.gmail.yershhov.ant_cybernest.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

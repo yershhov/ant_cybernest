@@ -5,128 +5,168 @@
 <head>
     <title>ant</title>
     <!-- for index -->
-<!--  <link rel="shortcut icon" type="image/x-icon" href="../static/icons/besticonever_reverse_icon.png" />-->
+    <!--  <link rel="shortcut icon" type="image/x-icon" href="../static/icons/besticonever_reverse_icon.png" />-->
 
     <!-- for java -->
-       <link rel="shortcut icon" type="image/x-icon" href="icons/besticonever_reverse_icon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="icons/besticonever_reverse_icon.png"/>
 
     <!-- for index -->
-<!-- <link rel="stylesheet" href="../static/css/style.css">-->
+    <!-- <link rel="stylesheet" href="../static/css/style.css">-->
 
     <!-- for java -->
-        <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <meta charset="UTF-8">
 </head>
 
 <body>
 <div class="wrapper_css">
     <div class="header_css">
-<!--       <div class="icon"><a href="index.html"><img src="../static/icons/besticonever_reverse.png" alt="ant"id="ant_icon">                    </a></div>-->
-         <div class="icon"><a href="/home#main"><img src="/icons/besticonever_reverse.png" alt="ant" id="ant_icon"></a></div>
+        <!--       <div class="icon"><a href="index.html"><img src="../static/icons/besticonever_reverse.png" alt="ant"id="ant_icon">                    </a></div>-->
+        <div class="icon"><a href="/home#main"><img src="/icons/besticonever_reverse.png" alt="ant" id="ant_icon"></a>
+        </div>
 
         <div class="items" id="item1"><a href="#profile_start">Account</a></div>
         <div class="items"><a href="#history_anchor">Order History</a></div>
         <div class="items item_right"><a href="#kitten_anchor">Kitten</a></div>
-        <div class="user_icon_div"><a href="#profile_start"><img class="user_icon" src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s" alt="user_pic"></a></div>
+        <div class="user_icon_div"><a href="#profile_start"><img class="user_icon"
+                                                                 src="https://media1.giphy.com/media/yYfYMDigAVCncNH0Nt/giphy.gif?cid=790b76114fa1b1127e2bc0d612b0d36641aeec3584bb40b1&rid=giphy.gif&ct=s"
+                                                                 alt="user_pic"></a></div>
     </div>
     <div class="container_css profile_container">
         <div class="main">
             <div class="content profile_content ">
-                <div class="account_details" id="profile_start"><span class="account_detail_text">Your Account</span></div>
+                <div class="account_details" id="profile_start"><span class="account_detail_text">Your Account</span>
+                </div>
                 <div class="table1">
                     <!-- <div class="edit"><a href=""><img class="edit_img" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt=""></a></div> -->
                     <div class="t1row">
                         <div class="t1_property">Full Name:</div>
-                        <div th:if="${loggedInUser != null}" class="t1_value" th:text="${loggedInUser.getFullName()}"></div>
+                        <div th:if="${loggedInUser != null}" class="t1_value"
+                             th:text="${loggedInUser.getFullName()}"></div>
                     </div>
                     <div class="t1row">
                         <div class="t1_property">Email:</div>
-                        <div th:if="${loggedInUser != null}" class="t1_value" th:text="${loggedInUser.getEmail()}"></div>
+                        <div th:if="${loggedInUser != null}" class="t1_value"
+                             th:text="${loggedInUser.getEmail()}"></div>
                     </div>
                     <div class="t1row">
                         <div class="t1_property">Phone number:</div>
-                        <div th:if="${loggedInUser != null}" class="t1_value" th:text="${loggedInUser.getPhone()}"></div>
+                        <div th:if="${loggedInUser != null}" class="t1_value"
+                             th:text="${loggedInUser.getPhone()}"></div>
                     </div>
                 </div>
                 <hr>
-                <div class="order_history" id="history_anchor"><span class="order_history_text">Order History</span></div>
+                <div class="order_history" id="history_anchor"><span class="order_history_text">Order History</span>
+                </div>
 
                 <div class="table2">
                     <div th:each="dotaOrder : ${dotaOrders}">
                         <div class="val_row">
                             <div class="order_id"><strong th:text="${dotaOrder.orderId}"></strong></div>
                             <div class="game_name"><strong th:text="${dotaOrder.game}"></strong></div>
-                            <div class="current_mmr"><strong>PTS: </strong><span th:text="${dotaOrder.userExperience}"></span></div>
+                            <div class="current_mmr"><strong>PTS: </strong><span
+                                    th:text="${dotaOrder.userExperience}"></span></div>
                             <div class="role"><strong>Role: </strong><span th:text="${dotaOrder.role}"></span></div>
-                            <div class="win-rate_val"><strong>Comm. method: </strong><span th:text="${dotaOrder.communication}"></span></div>
-<!--                            <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-                            <div class="edit_dota"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div>
+                            <div class="win-rate_val"><strong>Comm. method: </strong><span
+                                    th:text="${dotaOrder.communication}"></span></div>
+                            <!--                            <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
+                            <div class="edit_dota"><button th:id="${dotaOrder.orderId}" onclick="show_hide(this.id)"><img class="edit_icon" src="/icons/edit.png" alt="asd"></button></div>
+                        </div>
+                        <div class="dota_change" th:id="'change'+ ${dotaOrder.orderId}">
+                            <form th:action="@{/{id}(id=${dotaOrder.orderId})}" th:method="PATCH" th:object="${updatedDotaOrder}">
+                                <div>
+                                    <input type="text" class="inp" th:field="*{userExperience}" placeholder="Current MMR">
+                                </div>
+                                <div>
+                                    <select name="role" id="role" class="select">
+                                        <option th:value="'Not mentioned'" th:text="'Preferred Role'" th:selected="selected"
+                                                th:disabled="disabled"></option>
+                                        <option th:value="'Carry'" th:text="'Carry'"></option>
+                                        <option th:value="'Off-Lane'" th:text="'Off-Lane'"></option>
+                                        <option th:value="'Mid-Lane'" th:text="'Mid-Lane'"></option>
+                                        <option th:value="'Support'" th:text="'Support'"></option>
+                                        <option th:value="'Hard Support'" th:text="'Hard Support'"></option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="communication" id="communication" class="select">
+                                        <option th:value="'Not mentioned'" th:text="'Communication'" th:selected="selected"
+                                                th:disabled="disabled"></option>
+                                        <option th:value="'Discord'" th:text="'Discord'"></option>
+                                        <option th:value="'TeamSpeak'" th:text="'TeamSpeak'"></option>
+                                        <option th:value="'Skype'" th:text="'Skype'"></option>
+                                    </select>
+                                </div>
+                                <div><input type="submit" class="modal_subm" value="Submit"></div>
+                                <div><a href="/deleteDotaOrder/{id}">Delete</a></div>
+                            </form>
                         </div>
                     </div>
-<!--                    <div class="val_row">-->
-<!--                        <div class="order_id"><strong>01</strong></div>-->
-<!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
-<!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
-<!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
-<!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
-<!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
-<!--&lt;!&ndash;                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>&ndash;&gt;-->
-<!--                         <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div>-->
-<!--                    </div>-->
-<!--                    <hr class="order_line">-->
-<!--                    <div class="val_row">-->
-<!--                        <div class="order_id"><strong>02</strong></div>-->
-<!--                        <div class="game_name"><strong>DOTA</strong></div>-->
-<!--                        <div class="current_mmr"><strong>PTS: </strong>745</div>-->
-<!--                        <div class="role"><strong>Role: </strong>Carry</div>-->
-<!--                        <div class="win-rate_val"><strong>Communication method: </strong>Discord</div>-->
-<!--                       <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-<!--                        &lt;!&ndash; <div class="edit_dota"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
-<!--                    </div>-->
-<!--                    <hr class="order_line">-->
-<!--                    <div class="val_row">-->
-<!--                        <div class="order_id"><strong>01</strong></div>-->
-<!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
-<!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
-<!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
-<!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
-<!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
-<!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-<!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
-<!--                    </div>-->
-<!--                    <hr class="order_line">-->
-<!--                    <div class="val_row">-->
-<!--                        <div class="order_id"><strong>01</strong></div>-->
-<!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
-<!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
-<!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
-<!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
-<!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
-<!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-<!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
-<!--                    </div>-->
+                    <!--                    <div class="val_row">-->
+                    <!--                        <div class="order_id"><strong>01</strong></div>-->
+                    <!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
+                    <!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
+                    <!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
+                    <!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
+                    <!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
+                    <!--&lt;!&ndash;                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>&ndash;&gt;-->
+                    <!--                         <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div>-->
+                    <!--                    </div>-->
+                    <!--                    <hr class="order_line">-->
+                    <!--                    <div class="val_row">-->
+                    <!--                        <div class="order_id"><strong>02</strong></div>-->
+                    <!--                        <div class="game_name"><strong>DOTA</strong></div>-->
+                    <!--                        <div class="current_mmr"><strong>PTS: </strong>745</div>-->
+                    <!--                        <div class="role"><strong>Role: </strong>Carry</div>-->
+                    <!--                        <div class="win-rate_val"><strong>Communication method: </strong>Discord</div>-->
+                    <!--                       <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
+                    <!--                        &lt;!&ndash; <div class="edit_dota"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
+                    <!--                    </div>-->
+                    <!--                    <hr class="order_line">-->
+                    <!--                    <div class="val_row">-->
+                    <!--                        <div class="order_id"><strong>01</strong></div>-->
+                    <!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
+                    <!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
+                    <!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
+                    <!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
+                    <!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
+                    <!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
+                    <!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
+                    <!--                    </div>-->
+                    <!--                    <hr class="order_line">-->
+                    <!--                    <div class="val_row">-->
+                    <!--                        <div class="order_id"><strong>01</strong></div>-->
+                    <!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
+                    <!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
+                    <!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
+                    <!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
+                    <!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
+                    <!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
+                    <!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
+                    <!--                    </div>-->
 
 
-
-
-                </div >
+                </div>
                 <div class="dancin" id="kitten_anchor">
-                <div class="kitten"><img src="https://c.tenor.com/9iOJvEmXkxgAAAAC/cursed-zxcursed-cat.gif" alt=""></div>
-                <div class="kitten"><img src="https://c.tenor.com/sVNO62-MYV0AAAAM/zxc-cat.gif" alt=""></div>
-                <div class="kitten"><img src="https://c.tenor.com/R5e73IyF84YAAAAC/zxc-cat.gif" alt=""></div>
+                    <div class="kitten"><img src="https://c.tenor.com/9iOJvEmXkxgAAAAC/cursed-zxcursed-cat.gif" alt="">
+                    </div>
+                    <div class="kitten"><img src="https://c.tenor.com/sVNO62-MYV0AAAAM/zxc-cat.gif" alt=""></div>
+                    <div class="kitten"><img src="https://c.tenor.com/R5e73IyF84YAAAAC/zxc-cat.gif" alt=""></div>
                 </div>
 
 
             </div>
             <div class="footer_css">
                 <div class="socialmedia">
-<!--                    <div class="telegram"><a href="https://t.me/cybernest"><img src="../static/icons/telegram.png"alt="tg"></a></div>-->
-<!--                    <div class="instagram"><a href="https://www.instagram.com/ant_cybernest/"><img src="../static/icons/instagram.png"alt="tg"></a></div>-->
-<!--                    <div class="github"><a href="https://github.com/yershhov/ant_cybernest"><img src="../static/icons/github.png" alt="tg"></a></div>-->
+                    <!--                    <div class="telegram"><a href="https://t.me/cybernest"><img src="../static/icons/telegram.png"alt="tg"></a></div>-->
+                    <!--                    <div class="instagram"><a href="https://www.instagram.com/ant_cybernest/"><img src="../static/icons/instagram.png"alt="tg"></a></div>-->
+                    <!--                    <div class="github"><a href="https://github.com/yershhov/ant_cybernest"><img src="../static/icons/github.png" alt="tg"></a></div>-->
 
-                       <div class="telegram"><a href="t.me/cybernest"><img src="/icons/telegram.png"alt="tg"></a></div>
-                       <div class="instagram"><a href="https://www.instagram.com/ant_cybernest/"><img src="/icons/instagram.png"alt="tg"></a></div>
-                       <div class="github"><a href="https://github.com/yershhov/ant_cybernest"><img src="/icons/github.png"alt="tg"></a></div>
+                    <div class="telegram"><a href="t.me/cybernest"><img src="/icons/telegram.png" alt="tg"></a></div>
+                    <div class="instagram"><a href="https://www.instagram.com/ant_cybernest/"><img
+                            src="/icons/instagram.png" alt="tg"></a></div>
+                    <div class="github"><a href="https://github.com/yershhov/ant_cybernest"><img src="/icons/github.png"
+                                                                                                 alt="tg"></a></div>
                 </div>
                 <div class="erha">
                     <div class="erha_text">Designed and supported by YER|HA coop.</div>
@@ -145,8 +185,10 @@
 </div>
 <!-- <script src="../static/js/myscript.js"></script> -->
 <!-- <script src="../static/js/popupscript.js"></script> -->
- <script src="/js/myscript.js"></script>
- <script src="/js/popupscript.js"></script>
+<script src="/js/myscript.js"></script>
+<script src="/js/popupscript.js"></script>
+<script src="/js/profile.js"></script>
+
 </body>
 
 </html>
