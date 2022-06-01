@@ -54,6 +54,20 @@
                         <div th:if="${loggedInUser != null}" class="t1_value"
                              th:text="${loggedInUser.getPhone()}"></div>
                     </div>
+                    <div class="edit_dota"><button th:id="${loggedInUser.email}" onclick="show_hide_user(this.id)"><img class="edit_icon" src="/icons/edit.png" alt="asd"></button></div>
+                    <div class="user_change" th:id="'change'+ ${loggedInUser.email}">
+                        <form th:action="@{/updateUser/{id}(id=${loggedInUser.userId})}" th:method="PATCH">
+                            <div class="inside_reg_form">
+                                <div class="reg_row_el"><input type="text" class="inp row_inp" th:field="*{updatedUser.fullName}" placeholder="New Full Name"></div>
+<!--                                <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.fullName')}" th:errors="*{loggedInUser.fullName}"></div>-->
+                                <div class="reg_row_el"><input type="text" class="inp row_inp" th:field="*{updatedUser.phone}" placeholder="New Phone"></div>
+<!--                                <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.phone')}" th:errors="*{loggedInUser.phone}"></div>-->
+                                <div class="reg_row_el"><input type="text" class="inp row_inp" th:field="*{updatedUser.password}" placeholder="New Password"></div>
+<!--                                <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.password')}" th:errors="*{loggedInUser.password}"></div>-->
+                                <div class="" ><input class="reg_subm" type="submit" value="Update"></div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <hr>
                 <div class="order_history" id="history_anchor"><span class="order_history_text">Order History</span>
@@ -73,13 +87,13 @@
                             <div class="edit_dota"><button th:id="${dotaOrder.orderId}" onclick="show_hide(this.id)"><img class="edit_icon" src="/icons/edit.png" alt="asd"></button></div>
                         </div>
                         <div class="dota_change" th:id="'change'+ ${dotaOrder.orderId}">
-                            <form th:action="@{/{id}(id=${dotaOrder.orderId})}" th:method="PATCH" th:object="${updatedDotaOrder}">
+                            <form th:action="@{/updateDota/{id}(id=${dotaOrder.orderId})}" th:method="PATCH" th:object="${updatedDotaOrder}">
                                 <div>
-                                    <input type="text" class="inp" th:field="*{userExperience}" placeholder="Current MMR">
+                                    <input type="text" class="inp" th:field="*{userExperience}" placeholder="New MMR">
                                 </div>
                                 <div>
                                     <select name="role" id="role" class="select">
-                                        <option th:value="'Not mentioned'" th:text="'Preferred Role'" th:selected="selected"
+                                        <option th:value="'Not mentioned'" th:text="'New Preferred Role'" th:selected="selected"
                                                 th:disabled="disabled"></option>
                                         <option th:value="'Carry'" th:text="'Carry'"></option>
                                         <option th:value="'Off-Lane'" th:text="'Off-Lane'"></option>
@@ -90,7 +104,7 @@
                                 </div>
                                 <div>
                                     <select name="communication" id="communication" class="select">
-                                        <option th:value="'Not mentioned'" th:text="'Communication'" th:selected="selected"
+                                        <option th:value="'Not mentioned'" th:text="'New Comm. Method'" th:selected="selected"
                                                 th:disabled="disabled"></option>
                                         <option th:value="'Discord'" th:text="'Discord'"></option>
                                         <option th:value="'TeamSpeak'" th:text="'TeamSpeak'"></option>
@@ -98,52 +112,59 @@
                                     </select>
                                 </div>
                                 <div><input type="submit" class="modal_subm" value="Submit"></div>
-                                <div><a href="/deleteDotaOrder/{id}">Delete</a></div>
+                            </form>
+                            <form th:action="@{/deleteDotaOrder/{id}(id=${dotaOrder.orderId})}" th:method="DELETE">
+                                <div><input type="submit" class="modal_subm" value="Delete"></div>
                             </form>
                         </div>
                     </div>
-                    <!--                    <div class="val_row">-->
-                    <!--                        <div class="order_id"><strong>01</strong></div>-->
-                    <!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
-                    <!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
-                    <!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
-                    <!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
-                    <!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
-                    <!--&lt;!&ndash;                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>&ndash;&gt;-->
-                    <!--                         <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div>-->
-                    <!--                    </div>-->
-                    <!--                    <hr class="order_line">-->
-                    <!--                    <div class="val_row">-->
-                    <!--                        <div class="order_id"><strong>02</strong></div>-->
-                    <!--                        <div class="game_name"><strong>DOTA</strong></div>-->
-                    <!--                        <div class="current_mmr"><strong>PTS: </strong>745</div>-->
-                    <!--                        <div class="role"><strong>Role: </strong>Carry</div>-->
-                    <!--                        <div class="win-rate_val"><strong>Communication method: </strong>Discord</div>-->
-                    <!--                       <div class="edit_dota"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-                    <!--                        &lt;!&ndash; <div class="edit_dota"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
-                    <!--                    </div>-->
-                    <!--                    <hr class="order_line">-->
-                    <!--                    <div class="val_row">-->
-                    <!--                        <div class="order_id"><strong>01</strong></div>-->
-                    <!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
-                    <!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
-                    <!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
-                    <!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
-                    <!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
-                    <!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-                    <!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
-                    <!--                    </div>-->
-                    <!--                    <hr class="order_line">-->
-                    <!--                    <div class="val_row">-->
-                    <!--                        <div class="order_id"><strong>01</strong></div>-->
-                    <!--                        <div class="game_name"><strong>CS:GO</strong></div>-->
-                    <!--                        <div class="current_rank"><strong>Current rank: </strong><br>Silver</div>-->
-                    <!--                        <div class="win_rate"><strong>Win rate: </strong><br>25%</div>-->
-                    <!--                        <div class="in-game_hours"><strong>In-Game hours: </strong><br>6h</div>-->
-                    <!--                        <div class="best_map"><strong>Best map: </strong><br>Mirage</div>-->
-                    <!--                       <div class="edit_csgo"><img class="edit_icon" src="../static/icons/edit.png" alt="asd"></div>-->
-                    <!--                        &lt;!&ndash; <div class="edit_csgo"><img class="edit_icon" src="/icons/edit.png" alt="asd"></div> &ndash;&gt;-->
-                    <!--                    </div>-->
+                    <div th:each="csOrder : ${csOrders}">
+                        <div class="val_row">
+                            <div class="order_id"><strong th:text="${csOrder.orderId}"></strong></div>
+                            <div class="game_name"><strong th:text="${csOrder.game}"></strong></div>
+                            <div class="current_rank"><strong>Current rank: </strong><br><span th:text="${csOrder.userExperience}"></span></div>
+                            <div class="win_rate"><strong>Win rate: </strong><br><span th:text="${csOrder.winRate}+'%'"></span></div>
+                            <div class="in-game_hours"><strong>In-Game hours: </strong><br><span th:text="${csOrder.hoursPlayed}"></span></div>
+                            <div class="best_map"><strong>Best map: </strong><br><span th:text="${csOrder.bestMap}"></span></div>
+                            <div class="edit_csgo"><button th:id="${csOrder.orderId}" onclick="show_hide(this.id)"><img class="edit_icon" src="/icons/edit.png" alt="asd"></button></div>
+                        </div>
+                        <div class="cs_change" th:id="'change'+ ${csOrder.orderId}">
+                            <form th:action="@{/updateCs/{id}(id=${csOrder.orderId})}" th:method="PATCH" th:object="${updatedCsOrder}">
+                                <div>
+                                    <select name="userExperience" id="userExperience" class="select">
+                                        <option th:value="'Not mentioned'" th:text="'Updated Rank'" th:selected="selected"
+                                                th:disabled="disabled"></option>
+                                        <option th:value="'Silver'" th:text="'Silver'"></option>
+                                        <option th:value="'Gold Nova'" th:text="'Gold Nova'"></option>
+                                        <option th:value="'Master Guardian'" th:text="'Master Guardian'"></option>
+                                        <option th:value="'Legendary Eagle'" th:text="'Legendary Eagle'"></option>
+                                        <option th:value="'Global Elite'" th:text="'Global Elite'"></option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="text" class="inp" th:field="*{winRate}" placeholder="New Rate(%)">
+                                </div>
+                                <div>
+                                    <input type="text" class="inp" th:field="*{hoursPlayed}" placeholder="In-game hours">
+                                </div>
+                                <div>
+                                    <select name="bestMap" id="bestMap" class="select">
+                                        <option th:value="'Not mentioned'" th:text="'Updated Map'" th:selected="selected"
+                                                th:disabled="disabled"></option>
+                                        <option th:value="'Mirage'" th:text="'Mirage'"></option>
+                                        <option th:value="'Inferno'" th:text="'Inferno'"></option>
+                                        <option th:value="'Overpass'" th:text="'Overpass'"></option>
+                                        <option th:value="'Nuke'" th:text="'Nuke'"></option>
+                                    </select>
+                                </div>
+                                <div><input type="submit" class="modal_subm" value="Submit"></div>
+                            </form>
+                            <form th:action="@{/deleteCsOrder/{id}(id=${csOrder.orderId})}" th:method="DELETE">
+                                <div><input type="submit" class="modal_subm" value="Delete"></div>
+                            </form>
+                        </div>
+                    </div>
+
 
 
                 </div>

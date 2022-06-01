@@ -30,7 +30,7 @@ public class IndexController {
     @PostMapping("/cspost")
     public String save(@ModelAttribute("csorder") CsOrder csOrder) {
         csOrder.setGame("CS:GO");
-
+        csOrder.setUser(ProfileController.getLoggedInUser());
         csRepository.save(csOrder);
         return "redirect:/profile";
     }
