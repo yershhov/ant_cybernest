@@ -35,6 +35,9 @@ public class DotaOrder implements Comparable<DotaOrder>{
     @Column
     private String communication;
 
+    private String newCommMethod = "New Comm. Method";
+    private String newPreferredRole ="New Role";
+
     @Override
     public int compareTo(DotaOrder o) {
         return this.orderId - o.orderId;

@@ -551,7 +551,9 @@ hr {
     width: 15rem;
     
 }
-
+.edit_inp, .edit_select{
+    margin-bottom: 2%;
+}
 ::placeholder{
     color: rgb(114, 114, 114);
 }
@@ -579,7 +581,6 @@ hr {
     border: none;
     border-radius: 0.45rem;
     padding: 2% 5%;
-    
 }
 
 /* Clear floats after the columns */
@@ -676,7 +677,7 @@ hr {
     font-weight: 100;
     flex-flow: row nowrap;
     text-align: center;
-    
+    margin-bottom: 8px;
 }
 .order_id{
     flex: 0 1 2rem;
@@ -711,9 +712,14 @@ hr {
     
 }
 .edit_csgo {
-    width: 5rem;
+    width: 4.5rem;
     height: 2rem;
     
+}
+.edit_user{
+    margin-top: 10px;
+    width: 2rem;
+    height: 1rem;
 }
 .edit_icon {
     width: 100%;
@@ -842,7 +848,7 @@ div.container {
 .inside_reg_form {
     display: flex;
     flex-flow: column wrap;
-    
+    margin-top: 20px;
 }
 .row_inp {
     margin-bottom: 1%;
@@ -861,6 +867,7 @@ div.container {
 }
 .reg_row_el {
     /* height: 7rem; */
+    text-align: center;
 }
 .reg_subm {
     padding: 2% 4%;
@@ -881,10 +888,21 @@ div.container {
 }
 .dota_change{
     display: none;
+    padding: 20px;
+}
+.edit_subm{
+    margin-bottom: 1px;
+    padding: 1.5% 4%;
+}
+.delete_subm{
+    background-color: #cc0000;
+    color: white;
 }
 .user_change{
     display: none;
 }
 .cs_change{
     display: none;
+    padding: 20px;
 }
+

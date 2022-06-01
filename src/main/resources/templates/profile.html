@@ -54,7 +54,8 @@
                         <div th:if="${loggedInUser != null}" class="t1_value"
                              th:text="${loggedInUser.getPhone()}"></div>
                     </div>
-                    <div class="edit_dota"><button th:id="${loggedInUser.email}" onclick="show_hide_user(this.id)"><img class="edit_icon" src="/icons/edit.png" alt="asd"></button></div>
+                    <div class="edit_user"><button th:id="${loggedInUser.email}" onclick="show_hide_user(this.id)"><img class="edit_icon" src="/icons/edit.png" alt="asd"></button></div>
+
                     <div class="user_change" th:id="'change'+ ${loggedInUser.email}">
                         <form th:action="@{/updateUser/{id}(id=${loggedInUser.userId})}" th:method="PATCH">
                             <div class="inside_reg_form">
@@ -64,7 +65,7 @@
 <!--                                <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.phone')}" th:errors="*{loggedInUser.phone}"></div>-->
                                 <div class="reg_row_el"><input type="text" class="inp row_inp" th:field="*{updatedUser.password}" placeholder="New Password"></div>
 <!--                                <div class="reg_emptiness" style ="color:red" th:if="${#fields.hasErrors('user.password')}" th:errors="*{loggedInUser.password}"></div>-->
-                                <div class="" ><input class="reg_subm" type="submit" value="Update"></div>
+                                <div class="reg_row_el" ><input class="reg_subm" type="submit" value="Update"></div>
                             </div>
                         </form>
                     </div>
@@ -89,11 +90,11 @@
                         <div class="dota_change" th:id="'change'+ ${dotaOrder.orderId}">
                             <form th:action="@{/updateDota/{id}(id=${dotaOrder.orderId})}" th:method="PATCH" th:object="${updatedDotaOrder}">
                                 <div>
-                                    <input type="text" class="inp" th:field="*{userExperience}" placeholder="New MMR">
+                                    <input type="text" class="inp edit_inp" th:field="*{userExperience}" placeholder="New MMR">
                                 </div>
                                 <div>
-                                    <select name="role" id="role" class="select">
-                                        <option th:value="'Not mentioned'" th:text="'New Preferred Role'" th:selected="selected"
+                                    <select name="role" id="role" class="select edit_select">
+                                        <option th:value="'Not mentioned'" th:text="'New Role'" th:selected="selected"
                                                 th:disabled="disabled"></option>
                                         <option th:value="'Carry'" th:text="'Carry'"></option>
                                         <option th:value="'Off-Lane'" th:text="'Off-Lane'"></option>
@@ -103,7 +104,7 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <select name="communication" id="communication" class="select">
+                                    <select name="communication" id="communication" class="select edit_select">
                                         <option th:value="'Not mentioned'" th:text="'New Comm. Method'" th:selected="selected"
                                                 th:disabled="disabled"></option>
                                         <option th:value="'Discord'" th:text="'Discord'"></option>
@@ -111,10 +112,10 @@
                                         <option th:value="'Skype'" th:text="'Skype'"></option>
                                     </select>
                                 </div>
-                                <div><input type="submit" class="modal_subm" value="Submit"></div>
+                                <div><input type="submit" class="login_sign_in edit_subm" value="Submit"></div>
                             </form>
                             <form th:action="@{/deleteDotaOrder/{id}(id=${dotaOrder.orderId})}" th:method="DELETE">
-                                <div><input type="submit" class="modal_subm" value="Delete"></div>
+                                <div><input type="submit" class="login_sign_in edit_subm delete_subm" value="Delete"></div>
                             </form>
                         </div>
                     </div>
@@ -131,7 +132,7 @@
                         <div class="cs_change" th:id="'change'+ ${csOrder.orderId}">
                             <form th:action="@{/updateCs/{id}(id=${csOrder.orderId})}" th:method="PATCH" th:object="${updatedCsOrder}">
                                 <div>
-                                    <select name="userExperience" id="userExperience" class="select">
+                                    <select name="userExperience" id="userExperience" class="select edit_select">
                                         <option th:value="'Not mentioned'" th:text="'Updated Rank'" th:selected="selected"
                                                 th:disabled="disabled"></option>
                                         <option th:value="'Silver'" th:text="'Silver'"></option>
@@ -142,13 +143,13 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <input type="text" class="inp" th:field="*{winRate}" placeholder="New Rate(%)">
+                                    <input type="text" class="inp edit_inp" th:field="*{winRate}" placeholder="New Rate(%)">
                                 </div>
                                 <div>
-                                    <input type="text" class="inp" th:field="*{hoursPlayed}" placeholder="In-game hours">
+                                    <input type="text" class="inp edit_inp" th:field="*{hoursPlayed}" placeholder="In-game hours">
                                 </div>
                                 <div>
-                                    <select name="bestMap" id="bestMap" class="select">
+                                    <select name="bestMap" id="bestMap" class="select edit_select">
                                         <option th:value="'Not mentioned'" th:text="'Updated Map'" th:selected="selected"
                                                 th:disabled="disabled"></option>
                                         <option th:value="'Mirage'" th:text="'Mirage'"></option>
@@ -157,10 +158,10 @@
                                         <option th:value="'Nuke'" th:text="'Nuke'"></option>
                                     </select>
                                 </div>
-                                <div><input type="submit" class="modal_subm" value="Submit"></div>
+                                <div><input type="submit" class="login_sign_in edit_subm" value="Submit"></div>
                             </form>
                             <form th:action="@{/deleteCsOrder/{id}(id=${csOrder.orderId})}" th:method="DELETE">
-                                <div><input type="submit" class="modal_subm" value="Delete"></div>
+                                <div><input type="submit" class="login_sign_in edit_subm delete_subm" value="Delete"></div>
                             </form>
                         </div>
                     </div>

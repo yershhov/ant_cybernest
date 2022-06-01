@@ -36,6 +36,9 @@ public class CsOrder implements Comparable<CsOrder>{
     @Column
     private String hoursPlayed;
 
+    private String newMap = "New Map";
+    private String newRank = "New Rank";
+
     @Override
     public int compareTo(CsOrder o) {
         return this.orderId - o.orderId;
